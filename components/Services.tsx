@@ -17,21 +17,9 @@ const servicesData = [
         direction: 'right'
     },
     {
-        title: 'UX/UI Design',
-        description: 'Beautiful, intuitive design systems that make complex tasks feel effortless.',
+        title: 'Creative Design',
+        description: 'Beautiful, intuitive design systems with engaging GSAP-powered animations that bring your brand to life.',
         imageUrl: 'https://picsum.photos/seed/abstractui/800/800',
-        direction: 'left'
-    },
-    {
-        title: 'Creative Animation',
-        description: 'Engaging GSAP-powered animations and interactions that bring your brand to life.',
-        imageUrl: 'https://picsum.photos/seed/abstractmotion/800/800',
-        direction: 'right'
-    },
-    {
-        title: 'Cloud Infrastructure',
-        description: 'Scalable, secure cloud architecture with automated deployments and monitoring.',
-        imageUrl: 'https://picsum.photos/seed/abstractcloud/800/800',
         direction: 'left'
     }
 ];
@@ -44,45 +32,22 @@ const Services: React.FC = () => {
         
         gsap.registerPlugin(ScrollTrigger);
 
-        function animateFrom(elem: HTMLElement, direction: number = 1) {
-            let x = 0;
-            let y = direction * 100;
-            
-            if (elem.classList.contains("gs_reveal_fromLeft")) {
-                x = -100;
-                y = 0;
-            } else if (elem.classList.contains("gs_reveal_fromRight")) {
-                x = 100;
-                y = 0;
-            }
-            
-            gsap.fromTo(elem, 
-                { x: x, y: y, autoAlpha: 0 },
-                {
-                    duration: 1.25,
-                    x: 0,
-                    y: 0,
-                    autoAlpha: 1,
-                    ease: "expo",
-                    overwrite: "auto"
-                }
-            );
-        }
-
-        function hide(elem: HTMLElement) {
-            gsap.set(elem, { autoAlpha: 0 });
-        }
-
-        const reveals = gsap.utils.toArray(".gs_reveal") as HTMLElement[];
+        const cards = gsap.utils.toArray('.service-card') as HTMLElement[];
         
-        reveals.forEach((elem) => {
-            hide(elem);
+        cards.forEach((card) => {
+            gsap.set(card, { autoAlpha: 0, y: 50 });
             
             ScrollTrigger.create({
-                trigger: elem,
-                onEnter: () => animateFrom(elem),
-                onEnterBack: () => animateFrom(elem, -1),
-                onLeave: () => hide(elem)
+                trigger: card,
+                start: 'top 85%',
+                onEnter: () => {
+                    gsap.to(card, {
+                        autoAlpha: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: 'power3.out'
+                    });
+                }
             });
         });
 
@@ -93,43 +58,51 @@ const Services: React.FC = () => {
 
     return (
         <section ref={sectionRef} id="services" className="py-20">
-            <div className="max-w-6xl mx-auto px-6">
-                <div className="h-[40vh] flex items-center justify-center">
-                    <h2 className="font-jetbrains text-4xl lg:text-5xl font-black text-white text-center gs_reveal">
+            <div className="max-w-7xl mx-auto px-6">
+                <div className="text-center mb-16">
+                    <h2 className="font-jetbrains text-4xl lg:text-5xl font-black text-white mb-4">
                         What We Do
                     </h2>
+                    <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+                        Cutting-edge digital solutions tailored to your unique needs
+                    </p>
                 </div>
 
-                <div className="flex flex-col gap-12">
+                <div className="grid md:grid-cols-3 gap-8">
                     {servicesData.map((service, index) => (
                         <div 
                             key={service.title}
-                            className={`flex flex-wrap items-center gap-8 min-h-screen border-t border-dashed border-gray-700 pt-12 gs_reveal ${
-                                service.direction === 'left' 
-                                    ? 'flex-row gs_reveal_fromLeft' 
-                                    : 'flex-row-reverse gs_reveal_fromRight'
-                            }`}
+                            className="service-card group relative"
                         >
-                            {/* Image */}
-                            <div className="flex-1 min-w-[300px]">
-                                <div className="relative aspect-square rounded-lg overflow-hidden">
-                                    <img 
-                                        src={service.imageUrl} 
-                                        alt={service.title}
-                                        className="absolute inset-0 w-full h-full object-cover"
-                                    />
+                            {/* Image with overlay */}
+                            <div className="relative h-72 rounded-lg overflow-hidden mb-6">
+                                <img 
+                                    src={service.imageUrl} 
+                                    alt={service.title}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30 group-hover:via-black/80 transition-all duration-500"></div>
+                                
+                                {/* Service number */}
+                                <div className="absolute top-4 right-4 font-jetbrains text-6xl font-black text-white/10 group-hover:text-yellow-400/20 transition-colors duration-500">
+                                    {String(index + 1).padStart(2, '0')}
+                                </div>
+
+                                {/* Title overlay */}
+                                <div className="absolute bottom-0 left-0 right-0 p-6">
+                                    <h3 className="font-jetbrains text-2xl font-black text-white group-hover:text-yellow-400 transition-colors duration-300">
+                                        {service.title}
+                                    </h3>
                                 </div>
                             </div>
 
-                            {/* Content */}
-                            <div className={`flex-1 min-w-[300px] ${service.direction === 'left' ? 'text-right' : 'text-left'}`}>
-                                <h3 className="font-jetbrains text-3xl lg:text-5xl font-black text-white mb-6 gs_reveal">
-                                    {service.title}
-                                </h3>
-                                <p className="text-lg lg:text-xl text-gray-300 leading-relaxed gs_reveal">
-                                    {service.description}
-                                </p>
-                            </div>
+                            {/* Description */}
+                            <p className="text-gray-300 text-base leading-relaxed px-2">
+                                {service.description}
+                            </p>
+
+                            {/* Bottom accent line */}
+                            <div className="absolute bottom-0 left-0 h-1 bg-yellow-400 w-0 group-hover:w-full transition-all duration-500 rounded-full"></div>
                         </div>
                     ))}
                 </div>
