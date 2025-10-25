@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Devdactyl | Web & Software Development | Wexford, Ireland</title>
+    <meta name="description" content="Devdactyl is a creative studio in Wexford, Ireland, led by Kim Hanlon. We specialize in custom web design, software development, and GSAP animations for clients from Ireland to the Cayman Islands." />
+    <meta name="keywords" content="web design, software development, wexford, ireland, kim hanlon, gsap animations, web development ireland, cayman islands, react developer, front-end developer" />
+    <link rel="canonical" href="https://devdactyl.ie/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://devdactyl.ie/" />
+    <meta property="og:title" content="Devdactyl | Web & Software Development | Wexford, Ireland" />
+    <meta property="og:description" content="Devdactyl is a creative studio in Wexford, Ireland, led by Kim Hanlon. We specialize in custom web design, software development, and GSAP animations for clients from Ireland to the Cayman Islands." />
+    <meta property="og:image" content="https://picsum.photos/seed/galaxy-music/1200/630" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://devdactyl.ie/" />
+    <meta property="twitter:title" content="Devdactyl | Web & Software Development | Wexford, Ireland" />
+    <meta property="twitter:description" content="Devdactyl is a creative studio in Wexford, Ireland, led by Kim Hanlon. We specialize in custom web design, software development, and GSAP animations for clients from Ireland to the Cayman Islands." />
+    <meta property="twitter:image" content="https://picsum.photos/seed/galaxy-music/1200/630" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #0a0a0a;
+        background-image: url('https://www.transparenttextures.com/patterns/gun-metal.png');
+        background-attachment: fixed;
+        color: #fff;
+      }
+      .font-jetbrains {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      .text-glow {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.3);
+      }
+      .yellow-glow {
+        text-shadow: 0 0 4px #facc15;
+      }
+      .hero-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+      .card-3d-wrapper {
+        perspective: 1000px;
+      }
+      .card-3d {
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        transform-style: preserve-3d;
+        position: relative;
+      }
+       /* Removed hover effects to prevent conflict with carousel */
+      .card-3d .glow-border {
+        position: absolute;
+        inset: 0;
+        border-radius: 0.5rem; /* same as rounded-lg */
+        border: 1px solid transparent;
+        background: conic-gradient(from 180deg at 50% 50%, rgba(250, 204, 21, 0.6) 0deg, rgba(250, 204, 21, 0) 360deg) border-box;
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        pointer-events: none;
+      }
+      .card-3d:hover .glow-border {
+         /* Let JS control this based on active state */
+        opacity: 1;
+      }
+      
+      /* New Carousel Styles */
+      .carousel-wrapper {
+        position: relative;
+        width: 100%;
+        height: 550px;
+        perspective: 2000px;
+        margin-top: 2rem;
+      }
+      .carousel {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform-style: preserve-3d;
+      }
+      .carousel-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: clamp(280px, 40vw, 450px);
+        height: fit-content;
+        backface-visibility: hidden;
+        /* GSAP will handle transforms */
+      }
+      .carousel-item .glow-border {
+         opacity: 0;
+         transition: opacity 0.7s ease;
+      }
+      .carousel-item.is-active .glow-border {
+        opacity: 1;
+      }
+
+      .carousel-nav {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          margin-top: 2rem;
+      }
+
+      .carousel-nav button {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.1);
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.3s ease;
+      }
+      .carousel-nav button:hover {
+          background: #facc15;
+          color: #000;
+          transform: scale(1.1);
+      }
+      
+      /* Ken Burns Effect for Blog Hero */
+      .ken-burns-container {
+          position: relative;
+          overflow: hidden;
+      }
+      .ken-burns-image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          animation: kenburns 30s ease-out infinite;
+      }
+      @keyframes kenburns {
+          0% {
+              transform: scale(1.05) translate(0, 0);
+          }
+          50% {
+              transform: scale(1.2) translate(-2%, 2%);
+          }
+          100% {
+              transform: scale(1.05) translate(0, 0);
+          }
+      }
+
+      /* Services Panel Separator */
+      .panel::after {
+          content: '';
+          position: absolute;
+          top: 15%;
+          bottom: 15%;
+          right: 0;
+          width: 1px;
+          background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.15), transparent);
+      }
+      .panel:last-child::after {
+          display: none;
+      }
+      
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
