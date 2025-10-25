@@ -1,119 +1,52 @@
-import React, { useRef, useEffect } from 'react';
-import type { FeaturedProject } from '../types';
+import React, { useEffect, useRef } from 'react';
 
 declare const gsap: any;
 declare const ScrollTrigger: any;
 
-const projectsData: FeaturedProject[] = [
+const projectsData = [
     {
-        imageUrl: 'https://picsum.photos/seed/emjcamera/800/600',
-        title: 'EMJ Camera',
-        description: 'A sleek portfolio website for music photographer Emma-Jane, showcasing concert and festival photography with an immersive, gallery-first design.',
-        tags: ['Portfolio', 'React', 'Photography'],
-        link: 'https://emjcamera.vercel.app/'
+        title: 'Abyss Dive Logger',
+        description: 'Technical dive planning and logging with gas mixing and decompression tracking. Built for professional divers who demand precision.',
+        imageUrl: 'https://picsum.photos/seed/deepsea/800/800',
+        tags: ['Web App', 'React', 'Data Viz'],
+        direction: 'left'
     },
     {
-        imageUrl: 'https://picsum.photos/seed/musicshop/800/600',
-        title: 'Vintage Vinyl Vault',
-        description: 'A nostalgic e-commerce platform for my grandfather\'s music CD shop, bringing decades of musical curation to the digital age with secure payments and inventory management.',
-        tags: ['E-commerce', 'Next.js', 'Stripe'],
-        link: '#'
+        title: 'RaveSphere',
+        description: 'Immersive festival companion with live updates and interactive maps. Real-time artist schedules and social features.',
+        imageUrl: 'https://picsum.photos/seed/nebularave/800/800',
+        tags: ['Mobile-First', 'UI/UX', 'Real-time'],
+        direction: 'right'
     },
     {
-        imageUrl: 'https://picsum.photos/seed/bangforyourbuck/800/600',
-        title: 'BangForYourBuck.ie',
-        description: 'A crowd-sourced platform tracking pint prices across Ireland. Real-time data submission, interactive maps, and price trends - helping punters find the best value locally.',
-        tags: ['Web App', 'Community', 'Maps API'],
-        link: '#'
+        title: 'Coral Guardians',
+        description: 'Interactive WebGL experience showcasing climate impact on coral reefs. Educational storytelling for a marine conservation NGO.',
+        imageUrl: 'https://picsum.photos/seed/digitalcoral/800/800',
+        tags: ['WebGL', 'Three.js', 'Storytelling'],
+        direction: 'left'
     },
     {
-        imageUrl: 'https://picsum.photos/seed/divelog/800/600',
-        title: 'DiveLog Pro',
-        description: 'A technical dive planning and logging application for professional divers. Gas calculations, decompression planning, and dive history tracking all in one place.',
-        tags: ['Web App', 'Tools', 'Technical'],
-        link: '#'
+        title: 'SoundWeave',
+        description: 'Minimalist portfolio with integrated audio players and beat-matched visualizer. Dynamic, responsive design for a music producer.',
+        imageUrl: 'https://picsum.photos/seed/soundgalaxy/800/800',
+        tags: ['Web Design', 'GSAP', 'Audio API'],
+        direction: 'right'
     },
     {
-        imageUrl: 'https://picsum.photos/seed/devdactyl-meta/800/600',
-        title: 'Devdactyl.ie: A Technical Breakdown',
-        description: 'A deep dive into building this very website: GSAP animation architecture, React 19 patterns, TypeScript best practices, and performance optimization strategies.',
-        tags: ['Case Study', 'GSAP', 'React'],
-        link: '#'
+        title: 'GreenTech Dashboard',
+        description: 'Analytics dashboard visualizing environmental data in actionable ways. Complex data made accessible for sustainability startups.',
+        imageUrl: 'https://picsum.photos/seed/greendata/800/800',
+        tags: ['Data Viz', 'SaaS', 'UI Design'],
+        direction: 'left'
     },
     {
-        imageUrl: 'https://picsum.photos/seed/bpmsync/800/600',
-        title: 'BPM Sync',
-        description: 'A DJ utility tool for beat matching and transition planning. Real-time BPM detection, key compatibility analysis, and mix preparation features.',
-        tags: ['Audio', 'Web Audio API', 'Tools'],
-        link: '#'
+        title: 'Quantum Commerce',
+        description: 'Next-gen e-commerce with AI-powered recommendations. Blazing-fast, headless architecture built for scale.',
+        imageUrl: 'https://picsum.photos/seed/quantumweb/800/800',
+        tags: ['E-commerce', 'Next.js', 'AI'],
+        direction: 'right'
     }
 ];
-
-const ProjectCard: React.FC<{ project: FeaturedProject; size: 'small' | 'medium' | 'large' }> = ({ project, size }) => {
-    const sizeClasses = {
-        small: 'md:col-span-1 md:row-span-1',
-        medium: 'md:col-span-1 md:row-span-2',
-        large: 'md:col-span-2 md:row-span-1'
-    };
-
-    return (
-        <a 
-            href={project.link}
-            className={`project-card group relative bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 hover:border-yellow-400/50 transition-all duration-500 ${sizeClasses[size]} min-h-[250px] flex flex-col`}
-            target={project.link.startsWith('http') ? '_blank' : '_self'}
-            rel={project.link.startsWith('http') ? 'noopener noreferrer' : ''}
-        >
-            {/* Image Background */}
-            <div className="absolute inset-0 overflow-hidden">
-                <img 
-                    src={project.imageUrl} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
-            </div>
-
-            {/* Content */}
-            <div className="relative z-10 p-6 flex flex-col h-full justify-end">
-                <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight">{project.title}</h3>
-                    
-                    {/* Description - hidden on small cards, visible on hover for others */}
-                    <p className={`text-gray-300 text-sm mb-4 transition-all duration-500 ${
-                        size === 'small' 
-                            ? 'opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-20' 
-                            : 'opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-32'
-                    }`}>
-                        {project.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2">
-                        {project.tags.map(tag => (
-                            <span 
-                                key={tag} 
-                                className="bg-yellow-400/20 text-yellow-300 text-xs font-semibold px-2.5 py-1 rounded-full border border-yellow-400/30"
-                            >
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Hover Arrow */}
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-yellow-400/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                </div>
-            </div>
-
-            {/* Glow Effect */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/0 via-yellow-400/10 to-yellow-400/0"></div>
-            </div>
-        </a>
-    );
-};
 
 const FeaturedWork: React.FC = () => {
     const sectionRef = useRef<HTMLElement>(null);
@@ -123,88 +56,104 @@ const FeaturedWork: React.FC = () => {
         
         gsap.registerPlugin(ScrollTrigger);
 
-        const cards = gsap.utils.toArray('.project-card');
-
-        // Staggered reveal animation
-        gsap.fromTo(cards,
-            { 
-                opacity: 0, 
-                y: 100,
-                scale: 0.8
-            },
-            {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 0.8,
-                stagger: {
-                    amount: 0.6,
-                    from: "start",
-                    ease: "power2.out"
-                },
-                ease: 'power3.out',
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: 'top 70%',
-                }
+        function animateFrom(elem: HTMLElement, direction: number = 1) {
+            let x = 0;
+            let y = direction * 100;
+            
+            if (elem.classList.contains("gs_reveal_fromLeft")) {
+                x = -100;
+                y = 0;
+            } else if (elem.classList.contains("gs_reveal_fromRight")) {
+                x = 100;
+                y = 0;
             }
-        );
-
-        // Subtle parallax on scroll
-        cards.forEach((card) => {
-            gsap.to(card as HTMLElement, {
-                y: -20,
-                scrollTrigger: {
-                    trigger: card as HTMLElement,
-                    start: 'top bottom',
-                    end: 'bottom top',
-                    scrub: 1
+            
+            gsap.fromTo(elem, 
+                { x: x, y: y, autoAlpha: 0 },
+                {
+                    duration: 1.25,
+                    x: 0,
+                    y: 0,
+                    autoAlpha: 1,
+                    ease: "expo",
+                    overwrite: "auto"
                 }
+            );
+        }
+
+        function hide(elem: HTMLElement) {
+            gsap.set(elem, { autoAlpha: 0 });
+        }
+
+        const reveals = gsap.utils.toArray(".gs_reveal") as HTMLElement[];
+        
+        reveals.forEach((elem) => {
+            hide(elem);
+            
+            ScrollTrigger.create({
+                trigger: elem,
+                onEnter: () => animateFrom(elem),
+                onEnterBack: () => animateFrom(elem, -1),
+                onLeave: () => hide(elem)
             });
         });
 
+        return () => {
+            ScrollTrigger.getAll().forEach(st => st.kill());
+        };
     }, []);
 
-    // Bento box layout pattern: large, medium, small, small, medium, large
-    const layout: Array<'small' | 'medium' | 'large'> = ['large', 'medium', 'small', 'small', 'medium', 'large'];
-
     return (
-        <section id="featured-work" ref={sectionRef} className="py-20 lg:py-32 overflow-hidden">
-            <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
-                    <h2 className="font-jetbrains text-4xl lg:text-5xl font-black text-white">Featured Work</h2>
-                    <p className="text-lg text-gray-400 mt-2 max-w-2xl mx-auto">
-                        From personal passion projects to client solutions, each built with purpose and precision.
-                    </p>
-                </div>
-                
-                {/* Bento Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[280px] gap-6 max-w-7xl mx-auto">
-                    {projectsData.map((project, index) => (
-                        <ProjectCard 
-                            key={project.title} 
-                            project={project} 
-                            size={layout[index]}
-                        />
-                    ))}
+        <section ref={sectionRef} id="featured-work" className="py-20">
+            <div className="max-w-6xl mx-auto px-6">
+                <div className="h-[40vh] flex items-center justify-center">
+                    <h2 className="font-jetbrains text-4xl lg:text-5xl font-black text-white text-center gs_reveal">
+                        Featured Work
+                    </h2>
                 </div>
 
-                {/* GitHub Link */}
-                <div className="text-center mt-16">
-                    <a 
-                        href="https://github.com/kimatron" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-gray-400 hover:text-yellow-400 transition-colors group"
-                    >
-                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                        </svg>
-                        <span className="font-semibold">View More on GitHub</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                    </a>
+                <div className="flex flex-col gap-6">
+                    {projectsData.map((project) => (
+                        <div 
+                            key={project.title}
+                            className={`flex flex-wrap items-center gap-4 min-h-[33vh] border-t border-dashed border-gray-700 pt-6 gs_reveal ${
+                                project.direction === 'left' 
+                                    ? 'flex-row gs_reveal_fromLeft' 
+                                    : 'flex-row-reverse gs_reveal_fromRight'
+                            }`}
+                        >
+                            {/* Image */}
+                            <div className="flex-1 min-w-[250px]">
+                                <div className="relative aspect-square rounded-lg overflow-hidden">
+                                    <img 
+                                        src={project.imageUrl} 
+                                        alt={project.title}
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Content */}
+                            <div className={`flex-1 min-w-[250px] ${project.direction === 'left' ? 'text-right' : 'text-left'}`}>
+                                <h3 className="font-jetbrains text-xl lg:text-3xl font-black text-white mb-3 gs_reveal">
+                                    {project.title}
+                                </h3>
+                                <p className="text-sm lg:text-base text-gray-300 leading-relaxed mb-3 gs_reveal">
+                                    {project.description}
+                                </p>
+                                <div className={`flex flex-wrap gap-2 gs_reveal ${project.direction === 'left' ? 'justify-end' : 'justify-start'}`}>
+                                    {project.tags.map(tag => (
+                                        <span 
+                                            key={tag} 
+                                            className="text-xs font-semibold text-yellow-400 border border-yellow-400/30 px-2 py-1 rounded-full"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
