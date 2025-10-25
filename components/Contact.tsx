@@ -2,17 +2,40 @@ import React, { useState } from 'react';
 
 const Contact: React.FC = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Here you would handle form submission
-        console.log('Form submitted:', formData);
-        alert("Thank you for your message! We'll be in touch soon.");
-        setFormData({ name: '', email: '', message: '' });
+        setStatus('sending');
+        
+        try {
+            // Option 1: Using Formspree (recommended - sign up at formspree.io for free)
+            // Replace YOUR_FORM_ID with your actual Formspree form ID
+            const response = await fetch('https://formspree.io/f/xvgvooqr', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                setFormData({ name: '', email: '', message: '' });
+                setTimeout(() => setStatus('idle'), 5000);
+            } else {
+                throw new Error('Failed to send message');
+            }
+        } catch (error) {
+            setStatus('error');
+            setErrorMessage('Failed to send message. Please email directly: kim@devdactyl.ie');
+            setTimeout(() => setStatus('idle'), 5000);
+        }
     };
     
     return (
@@ -39,20 +62,66 @@ const Contact: React.FC = () => {
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
-                                <input type="text" name="name" id="name" required value={formData.name} onChange={handleChange} autoComplete="name" className="w-full bg-white/5 backdrop-blur-sm border border-white/20 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400/50 focus:bg-white/10 transition" />
+                                <input 
+                                    type="text" 
+                                    name="name" 
+                                    id="name" 
+                                    required 
+                                    value={formData.name} 
+                                    onChange={handleChange} 
+                                    autoComplete="name" 
+                                    disabled={status === 'sending'}
+                                    className="w-full bg-white/5 backdrop-blur-sm border border-white/20 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400/50 focus:bg-white/10 transition disabled:opacity-50" 
+                                />
                             </div>
                             <div>
                                 <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
-                                <input type="email" name="email" id="email" required value={formData.email} onChange={handleChange} autoComplete="email" className="w-full bg-white/5 backdrop-blur-sm border border-white/20 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400/50 focus:bg-white/10 transition" />
+                                <input 
+                                    type="email" 
+                                    name="email" 
+                                    id="email" 
+                                    required 
+                                    value={formData.email} 
+                                    onChange={handleChange} 
+                                    autoComplete="email" 
+                                    disabled={status === 'sending'}
+                                    className="w-full bg-white/5 backdrop-blur-sm border border-white/20 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400/50 focus:bg-white/10 transition disabled:opacity-50" 
+                                />
                             </div>
                         </div>
                         <div>
                             <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">Message</label>
-                            <textarea name="message" id="message" rows={5} required value={formData.message} onChange={handleChange} className="w-full bg-white/5 backdrop-blur-sm border border-white/20 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400/50 focus:bg-white/10 transition"></textarea>
+                            <textarea 
+                                name="message" 
+                                id="message" 
+                                rows={5} 
+                                required 
+                                value={formData.message} 
+                                onChange={handleChange} 
+                                disabled={status === 'sending'}
+                                className="w-full bg-white/5 backdrop-blur-sm border border-white/20 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400/50 focus:bg-white/10 transition disabled:opacity-50"
+                            ></textarea>
                         </div>
+
+                        {/* Status Messages */}
+                        {status === 'success' && (
+                            <div className="bg-green-500/10 border border-green-500/50 rounded-md p-4 text-green-400">
+                                ✓ Message sent successfully! We'll get back to you soon.
+                            </div>
+                        )}
+                        {status === 'error' && (
+                            <div className="bg-red-500/10 border border-red-500/50 rounded-md p-4 text-red-400">
+                                ✗ {errorMessage}
+                            </div>
+                        )}
+
                         <div className="text-center">
-                            <button type="submit" className="bg-yellow-400 text-black font-semibold px-8 py-3 rounded-md hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105 text-lg">
-                                Send Message
+                            <button 
+                                type="submit" 
+                                disabled={status === 'sending'}
+                                className="bg-yellow-400 text-black font-semibold px-8 py-3 rounded-md hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105 text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                            >
+                                {status === 'sending' ? 'Sending...' : 'Send Message'}
                             </button>
                         </div>
                     </form>
