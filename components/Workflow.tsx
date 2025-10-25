@@ -193,26 +193,25 @@ const Workflow: React.FC = () => {
                                 index % 2 === 0 ? 'gs_reveal_fromLeft' : 'gs_reveal_fromRight'
                             }`}
                         >
-                            {/* Number Circle */}
+                            {/* Number Circle - Clean on mobile */}
                             <div className="flex-shrink-0">
-                                <div className="w-16 h-16 rounded-full bg-black border-4 border-yellow-400 flex items-center justify-center relative">
+                                <div className="w-16 h-16 rounded-full bg-black border-4 border-yellow-400 flex items-center justify-center">
                                     <span className="font-jetbrains text-xl font-black text-yellow-400">
                                         {step.number}
                                     </span>
-                                    {/* Icon Badge */}
-                                    <div className="absolute -bottom-1 -right-1 w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center text-black shadow-lg">
-                                        <div className="scale-75">
-                                            {step.icon}
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 
-                            {/* Content Card */}
+                            {/* Content Card with Icon */}
                             <div className="flex-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-5 hover:border-yellow-400/50 hover:bg-white/10 transition-all duration-300">
-                                <h3 className="font-jetbrains text-lg font-black text-white mb-2">
-                                    {step.title}
-                                </h3>
+                                <div className="flex items-center gap-2 mb-2">
+                                    <div className="text-yellow-400">
+                                        {step.icon}
+                                    </div>
+                                    <h3 className="font-jetbrains text-lg font-black text-white">
+                                        {step.title}
+                                    </h3>
+                                </div>
                                 <p className="text-gray-300 text-sm leading-relaxed">
                                     {step.description}
                                 </p>

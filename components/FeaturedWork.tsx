@@ -5,31 +5,31 @@ declare const ScrollTrigger: any;
 
 const projectsData = [
     {
-        title: 'Abyss Dive Logger',
-        description: 'Technical dive planning and logging with gas mixing and decompression tracking. Built for professional divers who demand precision.',
-        imageUrl: 'https://picsum.photos/seed/deepsea/800/800',
-        tags: ['Web App', 'React', 'Data Viz'],
+        title: 'Dive Centre Pro',
+        description: 'Comprehensive dive centre management system with real-time dive conditions API, customer records, inventory tracking, and integrated retail engagement platform.',
+        imageUrl: 'images/diveshop.png',
+        tags: ['Full-Stack', 'API Integration', 'Retail POS'],
         direction: 'left'
     },
     {
-        title: 'RaveSphere',
-        description: 'Immersive festival companion with live updates and interactive maps. Real-time artist schedules and social features.',
-        imageUrl: 'https://picsum.photos/seed/nebularave/800/800',
-        tags: ['Mobile-First', 'UI/UX', 'Real-time'],
+        title: 'EMJ Camera',
+        description: 'Stunning photographer portfolio featuring GSAP-powered 3D animations, custom client portal for proofing galleries, and integrated print store with Stripe checkout.',
+        imageUrl: 'images/emj.jpg',
+        tags: ['GSAP', '3D', 'E-commerce'],
         direction: 'right'
     },
     {
-        title: 'SoundWeave',
-        description: 'Minimalist portfolio with integrated audio players and beat-matched visualizer. Dynamic, responsive design for a music producer.',
-        imageUrl: 'https://picsum.photos/seed/soundgalaxy/800/800',
-        tags: ['Web Design', 'GSAP', 'Audio API'],
+        title: 'Vinyl Vault Records',
+        description: 'E-commerce platform bringing a 40-year market legacy online. Built for a 92-year-old record collector, digitalizing decades of expertise with modern shopping experience.',
+        imageUrl: 'images/webmock.avif',
+        tags: ['E-commerce', 'Legacy Business', 'Shopify'],
         direction: 'left'
     },
     {
-        title: 'Quantum Commerce',
-        description: 'Next-gen e-commerce with AI-powered recommendations. Blazing-fast, headless architecture built for scale.',
-        imageUrl: 'https://picsum.photos/seed/quantumweb/800/800',
-        tags: ['E-commerce', 'Next.js', 'AI'],
+        title: 'Bang For The Buck',
+        description: 'Crowdsourced pint tracker leveraging real-time community data to find the best-priced pints. Built with Next.js, Supabase, and live location services.',
+        imageUrl: 'https://picsum.photos/seed/pinttracker/800/800',
+        tags: ['Next.js', 'Supabase', 'Real-time'],
         direction: 'right'
     }
 ];
@@ -92,7 +92,7 @@ const FeaturedWork: React.FC = () => {
     return (
         <section ref={sectionRef} id="featured-work" className="py-20">
             <div className="max-w-6xl mx-auto px-6">
-                <div className="text-center mb-16">
+                <div className="text-center mb-12">
                     <h2 className="font-jetbrains text-4xl lg:text-5xl font-black text-white mb-4">
                         Featured Work
                     </h2>
@@ -101,18 +101,18 @@ const FeaturedWork: React.FC = () => {
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-12">
+                <div className="flex flex-col gap-16">
                     {projectsData.map((project) => (
                         <div 
                             key={project.title}
-                            className={`flex flex-wrap items-center gap-8 border-t border-dashed border-gray-700 pt-12 gs_reveal ${
+                            className={`flex flex-wrap items-center gap-6 gs_reveal ${
                                 project.direction === 'left' 
                                     ? 'flex-row gs_reveal_fromLeft' 
                                     : 'flex-row-reverse gs_reveal_fromRight'
                             }`}
                         >
                             {/* Image */}
-                            <div className="flex-1 min-w-[300px]">
+                            <div className="flex-1 min-w-[280px] max-w-[400px]">
                                 <div className="relative aspect-square rounded-lg overflow-hidden group">
                                     <img 
                                         src={project.imageUrl} 
@@ -123,11 +123,11 @@ const FeaturedWork: React.FC = () => {
                             </div>
 
                             {/* Content */}
-                            <div className={`flex-1 min-w-[300px] ${project.direction === 'left' ? 'text-right' : 'text-left'}`}>
-                                <h3 className="font-jetbrains text-3xl lg:text-5xl font-black text-white mb-6 hover:text-yellow-400 transition-colors duration-300">
+                            <div className={`flex-1 min-w-[280px] ${project.direction === 'left' ? 'text-right' : 'text-left'}`}>
+                                <h3 className="font-jetbrains text-2xl lg:text-4xl font-black text-white mb-4 hover:text-yellow-400 transition-colors duration-300">
                                     {project.title}
                                 </h3>
-                                <p className="text-lg lg:text-xl text-gray-300 leading-relaxed mb-6">
+                                <p className="text-base lg:text-lg text-gray-300 leading-relaxed mb-4">
                                     {project.description}
                                 </p>
                                 <div className={`flex flex-wrap gap-2 ${project.direction === 'left' ? 'justify-end' : 'justify-start'}`}>
