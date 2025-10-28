@@ -15,7 +15,7 @@ const faqData: FAQItem[] = [
     },
     {
         question: "Why the name 'Devdactyl'?",
-        answer: "I was <em>that</em> dinosaur kid. While other girls played with dolls, I was reading about the Jurassic period and collecting fossils. I've got a pterodactyl tooth on my desk right now (yes, really). So 'Devdactyl' is a mashup of 'DEVeloper' and 'pterodactyl' - a nod to my childhood obsession. Sure, dinosaurs didn't last forever... but your website will live on in the memories just like them. 🦖"
+        answer: "I was <em>that</em> dinosaur kid. While other girls played with dolls, I was reading about the Jurassic period and collecting fossils. I've got a pterodactyl tooth on my desk right now (yes, really). So 'Devdactyl' is a mashup of 'DEVeloper' and 'pterodactyl' - a nod to my childhood obsession. And no, I don't see the irony in naming a tech company after something famously extinct."
     },
     {
         question: "Do you only build websites?",
@@ -35,15 +35,15 @@ const faqData: FAQItem[] = [
     },
     {
         question: "How long does it take to build a website?",
-        answer: "It depends on complexity, but here's the rough timeline: a simple brochure site takes 1-3 weeks, a custom business site with integrations could take 3-6 weeks, and a full web app or e-commerce platform can be up to 8-12 weeks. I'll give you a realistic estimate after our initial chat."
+        answer: "That’s a bit like asking 'how long does it take to build a house?'. A simple one-page 'brochure' site might take a couple of weeks. A more complex e-commerce site or business platform is more like a custom build, taking one to three months. After we have a chat about what you need, I'll give you a detailed, realistic timeline. No finger-in-the-air guesstimates."
     },
     {
         question: "Do you work with clients outside Ireland?",
-        answer: "100%. I've worked with clients from Ireland to the Cayman Islands and beyond. Thanks to the magic of the internet (and a brain that was never wired to sleep), time zones are just a minor inconvenience. If you've got a project and a solid WiFi connection, we can make it happen."
+        answer: "100%. I've built projects for clients from the West of Ireland to the West Indies. As long as you have a decent internet connection and can tolerate my (very tweaked) Irish accent on a video call, location is not an issue. Thanks to a brain that was never wired to sleep, time zones are just a minor inconvenience. If you've got a project and a solid WiFi connection, we can make it happen."
     },
     {
         question: "How much does a website cost?",
-        answer: "The dreaded question! It ranges from €500 for a simple site or fix to €10,000+ for complex custom builds. Every project is different, so I don't have a one-size-fits-all price list. After a quick discovery call, I'll send you a transparent, detailed quote with no hidden fees. You'll know exactly what you're paying for."
+        answer: "The million-dollar question, though hopefully it won't cost that much. It's impossible to have a fixed price list because every project is unique. A simple landing page is a garden shed; a full e-commerce platform is a multi-storey office block. After a brief chat to understand your needs, I provide a detailed, itemised quote. It’s completely transparent, with no nasty surprises later."
     },
     // {
     //     question: "What's your design process like?",
