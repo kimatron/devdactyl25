@@ -11,11 +11,11 @@ interface FAQItem {
 const faqData: FAQItem[] = [
     {
         question: "What do you actually do?",
-        answer: "I’ve probably been asked that more times than my own name. I build custom websites and software that solve real problems. Think of me as a digital architect, I design the blueprint, write the code, and make sure everything works beautifully. Whether it's an e-commerce store, a booking system, or a complex web app, I create solutions that are fast, functional, and designed to grow with your business."
+        answer: "I've probably been asked that more times than my own name. I build custom websites and software that solve real problems. Think of me as a digital architect, I design the blueprint, write the code, and make sure everything works beautifully. Whether it's an e-commerce store, a booking system, or a complex web app, I create solutions that are fast, functional, and designed to grow with your business."
     },
     {
         question: "Why the name 'Devdactyl'?",
-        answer: "I was <em>that</em> dinosaur kid. While other girls played with dolls, I was reading about the Jurassic period and collecting fossils. I've got a pterodactyl tooth on my desk right now (yes, really). So 'Devdactyl' is a mashup of 'DEVeloper' and 'pterodactyl' - a nod to my childhood obsession. And no, I don't see the irony in naming a tech company after something famously extinct."
+        answer: "I was <em>that</em> dinosaur kid. While other girls played with dolls, I was reading about the Jurassic period and collecting fossils. I've got a pterodactyl tooth on my desk right now (yes, really). So 'Devdactyl' is a mashup of 'DEVeloper' and 'pterodactyl'. It's a nod to my childhood obsession. And no, I don't see the irony in naming a tech company after something famously extinct."
     },
     {
         question: "Do you only build websites?",
@@ -27,7 +27,7 @@ const faqData: FAQItem[] = [
     },
     {
         question: "Can you fix my existing website?",
-        answer: "Yes! Whether it's broken, slow, outdated, or just kinda ugly, I can diagnose the issues and get it back in shape. Think of it as a digital renovation. I'll assess what's salvageable, what needs rebuilding, and give you an honest plan. No judgment."
+        answer: "Yes. I've seen it all. Whether your site is slower than a dial-up connection, looks like it was designed in 1998, or is just plain broken, I can help. I'll take a look under the bonnet, diagnose the problems, and give you an honest, jargon-free plan to get it back into shape. No judgment here; the internet is a scary place."
     },
     {
         question: "Do you use AI to build websites?",
@@ -35,7 +35,7 @@ const faqData: FAQItem[] = [
     },
     {
         question: "How long does it take to build a website?",
-        answer: "That’s a bit like asking 'how long does it take to build a house?'. A simple one-page 'brochure' site might take a couple of weeks. A more complex e-commerce site or business platform is more like a custom build, taking one to three months. After we have a chat about what you need, I'll give you a detailed, realistic timeline. No finger-in-the-air guesstimates."
+        answer: "That's a bit like asking 'how long does it take to build a house?'. A simple one-page 'brochure' site might take a couple of weeks. A more complex e-commerce site or business platform is more like a custom build, taking one to three months. After we have a chat about what you need, I'll give you a detailed, realistic timeline. No finger-in-the-air guesstimates."
     },
     {
         question: "Do you work with clients outside Ireland?",
@@ -43,16 +43,8 @@ const faqData: FAQItem[] = [
     },
     {
         question: "How much does a website cost?",
-        answer: "The million-dollar question, though hopefully it won't cost that much. It's impossible to have a fixed price list because every project is unique. A simple landing page is a garden shed; a full e-commerce platform is a multi-storey office block. After a brief chat to understand your needs, I provide a detailed, itemised quote. It’s completely transparent, with no nasty surprises later."
-    },
-    // {
-    //     question: "What's your design process like?",
-    //     answer: "We start with a discovery session to understand your goals, audience, and brand vibe. Then I create wireframes and mockups for your feedback. Once we nail the design, I move into development, keeping you in the loop with regular check-ins. Before launch, we test everything, and then I hand over a polished, ready-to-go site (plus training if you need it)."
-    // },
-    // {
-    //     question: "Can you help with SEO and online marketing?",
-    //     answer: "I build sites with SEO best practices baked in — clean code, fast loading, mobile-friendly, proper meta tags, and semantic HTML. For ongoing SEO strategy, content marketing, or paid ads, I can recommend trusted specialists I've worked with. I focus on building the foundation; they help you dominate the search results."
-    // }
+        answer: "The million-dollar question, though hopefully it won't cost that much. It's impossible to have a fixed price list because every project is unique. A simple landing page is a garden shed; a full e-commerce platform is a multi-storey office block. After a brief chat to understand your needs, I provide a detailed, itemised quote. It's completely transparent, with no nasty surprises later."
+    }
 ];
 
 const FAQAccordionItem: React.FC<{ item: FAQItem; index: number; isOpen: boolean; onToggle: () => void }> = ({ 
@@ -95,22 +87,22 @@ const FAQAccordionItem: React.FC<{ item: FAQItem; index: number; isOpen: boolean
     }, [isOpen]);
 
     return (
-        <div className="border-b border-white/10">
+        <div className="border-b border-white/10 last:border-b-0">
             <button
                 onClick={onToggle}
-                className="w-full text-left py-6 px-6 flex justify-between items-center group hover:bg-white/5 transition-colors duration-300"
+                className="w-full text-left py-3 px-4 flex justify-between items-center group hover:bg-white/5 transition-colors duration-300"
                 aria-expanded={isOpen}
             >
-                <h3 className="text-lg lg:text-xl font-bold text-white group-hover:text-yellow-400 transition-colors pr-4">
+                <h3 className="text-sm lg:text-base font-bold text-white group-hover:text-yellow-400 transition-colors pr-3">
                     {item.question}
                 </h3>
                 <div 
                     ref={iconRef}
-                    className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 group-hover:bg-yellow-400/20 transition-colors"
+                    className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-white/10 group-hover:bg-yellow-400/20 transition-colors"
                 >
                     <svg 
                         xmlns="http://www.w3.org/2000/svg" 
-                        className="h-5 w-5 text-yellow-400" 
+                        className="h-3.5 w-3.5 text-yellow-400" 
                         fill="none" 
                         viewBox="0 0 24 24" 
                         stroke="currentColor"
@@ -124,9 +116,9 @@ const FAQAccordionItem: React.FC<{ item: FAQItem; index: number; isOpen: boolean
                 className="overflow-hidden"
                 style={{ height: 0, opacity: 0 }}
             >
-                <div className="px-6 pb-6">
+                <div className="px-4 pb-3">
                     <p 
-                        className="text-gray-300 leading-relaxed"
+                        className="text-gray-300 text-xs lg:text-sm leading-relaxed"
                         dangerouslySetInnerHTML={{ __html: item.answer }}
                     />
                 </div>
@@ -181,20 +173,20 @@ const FAQ: React.FC = () => {
     }, []);
 
     return (
-        <section id="faq" ref={sectionRef} className="py-20 lg:py-32">
+        <section id="faq" ref={sectionRef} className="py-16 lg:py-20">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-12 faq-header">
-                    <h2 className="font-jetbrains text-4xl lg:text-5xl font-black text-white mb-4">
+                <div className="text-center mb-10 faq-header">
+                    <h2 className="font-jetbrains text-3xl lg:text-4xl font-black text-white mb-3">
                         Questions? Answers.
                     </h2>
-                    <p className="text-lg text-gray-400">
+                    <p className="text-base text-gray-400">
                         The real talk about what I do, how I work, and why I named my studio after a dinosaur.
                     </p>
                 </div>
 
-                <div className="max-w-4xl mx-auto bg-white/5 backdrop-blur-md rounded-xl overflow-hidden border border-white/10">
+                <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-6">
                     {faqData.map((item, index) => (
-                        <div key={index} className="faq-item">
+                        <div key={index} className="faq-item bg-white/5 backdrop-blur-md rounded-xl overflow-hidden border border-white/10">
                             <FAQAccordionItem
                                 item={item}
                                 index={index}
@@ -205,8 +197,8 @@ const FAQ: React.FC = () => {
                     ))}
                 </div>
 
-                <div className="text-center mt-12">
-                    <p className="text-gray-400 mb-4">Still have questions?</p>
+                <div className="text-center mt-10">
+                    <p className="text-gray-400 text-sm mb-3">Still have questions?</p>
                     <a 
                         href="#contact" 
                         className="inline-block bg-yellow-400 text-black font-semibold px-8 py-3 rounded-md hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105"

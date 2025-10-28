@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import Workflow from './components/Workflow';
 import FeaturedWork from './components/FeaturedWork';
 import About from './components/About';
-import FAQ from './components/FAQ';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -22,9 +22,9 @@ const App: React.FC = () => {
           <>
             <Hero />
             <Services />
+            <Workflow />
             <FeaturedWork />
             <About />
-            <FAQ />
             <Blog setView={setView} />
             <Contact />
           </>
