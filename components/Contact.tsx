@@ -54,7 +54,7 @@ const Contact: React.FC<{
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
                     <h2 className="font-jetbrains text-4xl lg:text-5xl font-black text-white">Start a Project</h2>
-                    <p className="text-lg text-gray-400 mt-2">Have a project in mind or just have a question? Let's chat.</p>
+                    <p className="text-lg text-gray-400 mt-2">Have a project in mind or just have a question? I don't bite.</p>
                 </div>
 
                 <div className="max-w-3xl mx-auto">

@@ -29,17 +29,28 @@ const CTARevamp: React.FC<{ setFormData: React.Dispatch<React.SetStateAction<{ n
         );
     }, []);
 
+    const normalizeUrl = (input: string): string => {
+        let normalized = input.trim();
+        
+        // If it doesn't start with http:// or https://, add https://
+        if (!normalized.match(/^https?:\/\//i)) {
+            normalized = 'https://' + normalized;
+        }
+        
+        return normalized;
+    };
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (!url) return;
 
-        const message = `Hi Kim,\n\nI'd like a free diagnosis of my current website: ${url}\n\nLooking forward to hearing your thoughts.`;
+        const normalizedUrl = normalizeUrl(url);
+        const message = `Hi Kim,\n\nI'd like a free diagnosis of my current website: ${normalizedUrl}\n\nLooking forward to hearing your thoughts.`;
         setFormData(prev => ({ ...prev, message }));
 
         const contactSection = document.getElementById('contact');
         if (contactSection) {
             contactSection.scrollIntoView({ behavior: 'smooth' });
-            // Try to focus the message field after a short delay to allow for scrolling
             setTimeout(() => {
                 const messageEl = document.getElementById('message') as HTMLTextAreaElement;
                 if(messageEl) {
@@ -59,10 +70,10 @@ const CTARevamp: React.FC<{ setFormData: React.Dispatch<React.SetStateAction<{ n
                     </p>
                     <form onSubmit={handleSubmit} className="mt-8 flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
                         <input
-                            type="url"
+                            type="text"
                             value={url}
                             onChange={(e) => setUrl(e.target.value)}
-                            placeholder="https://your-website.com"
+                            placeholder="www.your-website.com"
                             required
                             className="flex-grow w-full bg-white/5 backdrop-blur-sm border border-white/20 rounded-md py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400/50 focus:bg-white/10 transition"
                             aria-label="Your website URL"
