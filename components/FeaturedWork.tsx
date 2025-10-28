@@ -22,13 +22,13 @@ const projectsData = [
         title: 'Vinyl Vault Records',
         description: 'E-commerce platform bringing a 40-year market legacy online. Built for a 92-year-old record collector, digitalizing decades of expertise with modern shopping experience.',
         imageUrl: 'images/webmock.avif',
-        tags: ['E-commerce', 'Legacy Business', 'Shopify'],
+        tags: ['E-commerce', 'Legacy Business', 'Django'],
         direction: 'left'
     },
     {
         title: 'Bang For The Buck',
         description: 'Crowdsourced pint tracker leveraging real-time community data to find the best-priced pints. Built with Next.js, Supabase, and live location services.',
-        imageUrl: 'https://picsum.photos/seed/pinttracker/800/800',
+        imageUrl: 'images/site1.png',
         tags: ['Next.js', 'Supabase', 'Real-time'],
         direction: 'right'
     }

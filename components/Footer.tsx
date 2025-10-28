@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                     <div className="mb-4 md:mb-0">
                         <DevdactylLogo />
-                        <p className="text-gray-500 mt-2 text-sm">Building virtual solutions to real-world problems.</p>
+                        <p className="text-gray-500 mt-2 text-sm">Building digital solutions to human problems.</p>
                         <p className="text-gray-500 text-sm">A creative studio by Kim Hanlon</p>
                     </div>
                     <div className="text-gray-400 text-sm">

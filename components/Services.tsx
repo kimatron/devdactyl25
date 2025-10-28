@@ -13,13 +13,13 @@ const servicesData = [
     {
         title: 'Software Development',
         description: 'Bespoke applications and automated workflows engineered to solve your unique business challenges.',
-        imageUrl: 'https://picsum.photos/seed/abstractcode/800/800',
+        imageUrl: 'images/outdoors1.jpg',
         direction: 'right'
     },
     {
         title: 'Creative Design',
         description: 'Beautiful, intuitive design systems with engaging GSAP-powered animations that bring your brand to life.',
-        imageUrl: 'https://picsum.photos/seed/abstractui/800/800',
+        imageUrl: 'images/devastro.png',
         direction: 'left'
     }
 ];
