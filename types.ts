@@ -24,3 +24,8 @@ export interface FeaturedProject {
     tags: string[];
     link: string;
 }
+
+export interface FAQItem {
+    question: string;
+    answer: string;
+}

@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Contact: React.FC = () => {
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-    const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-    const [errorMessage, setErrorMessage] = useState('');
+const Contact: React.FC<{ 
+    formData?: { name: string; email: string; message: string };
+    setFormData?: React.Dispatch<React.SetStateAction<{ name: string; email: string; message: string; }>>;
+}> = ({ formData: externalFormData, setFormData: externalSetFormData }) => {
+    const [internalFormData, setInternalFormData] = useState({ name: '', email: '', message: '' });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+    // Use external formData if provided, otherwise use internal state
+    const formData = externalFormData || internalFormData;
+    const setFormData = externalSetFormData || setInternalFormData;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -11,30 +18,34 @@ const Contact: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setStatus('sending');
-        
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+
         try {
-            // Option 1: Using Formspree (recommended - sign up at formspree.io for free)
             // Replace YOUR_FORM_ID with your actual Formspree form ID
-            const response = await fetch('https://formspree.io/f/xvgvooqr', {
+            const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                }),
             });
 
             if (response.ok) {
-                setStatus('success');
+                setSubmitStatus('success');
                 setFormData({ name: '', email: '', message: '' });
-                setTimeout(() => setStatus('idle'), 5000);
             } else {
-                throw new Error('Failed to send message');
+                setSubmitStatus('error');
             }
         } catch (error) {
-            setStatus('error');
-            setErrorMessage('Failed to send message. Please email directly: kim@devdactyl.ie');
-            setTimeout(() => setStatus('idle'), 5000);
+            console.error('Form submission error:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
         }
     };
     
@@ -43,7 +54,7 @@ const Contact: React.FC = () => {
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
                     <h2 className="font-jetbrains text-4xl lg:text-5xl font-black text-white">Start a Project</h2>
-                    <p className="text-lg text-gray-400 mt-2">Have a project in mind or just have a question? I don't bite.</p>
+                    <p className="text-lg text-gray-400 mt-2">Have a project in mind or just have a question? Let's chat.</p>
                 </div>
 
                 <div className="max-w-3xl mx-auto">
@@ -70,7 +81,7 @@ const Contact: React.FC = () => {
                                     value={formData.name} 
                                     onChange={handleChange} 
                                     autoComplete="name" 
-                                    disabled={status === 'sending'}
+                                    disabled={isSubmitting}
                                     className="w-full bg-white/5 backdrop-blur-sm border border-white/20 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400/50 focus:bg-white/10 transition disabled:opacity-50" 
                                 />
                             </div>
@@ -84,7 +95,7 @@ const Contact: React.FC = () => {
                                     value={formData.email} 
                                     onChange={handleChange} 
                                     autoComplete="email" 
-                                    disabled={status === 'sending'}
+                                    disabled={isSubmitting}
                                     className="w-full bg-white/5 backdrop-blur-sm border border-white/20 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400/50 focus:bg-white/10 transition disabled:opacity-50" 
                                 />
                             </div>
@@ -98,30 +109,30 @@ const Contact: React.FC = () => {
                                 required 
                                 value={formData.message} 
                                 onChange={handleChange} 
-                                disabled={status === 'sending'}
+                                disabled={isSubmitting}
                                 className="w-full bg-white/5 backdrop-blur-sm border border-white/20 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400/50 focus:bg-white/10 transition disabled:opacity-50"
                             ></textarea>
                         </div>
-
-                        {/* Status Messages */}
-                        {status === 'success' && (
-                            <div className="bg-green-500/10 border border-green-500/50 rounded-md p-4 text-green-400">
-                                ✓ Message sent successfully! We'll get back to you soon.
+                        
+                        {submitStatus === 'success' && (
+                            <div className="bg-green-500/10 border border-green-500/30 rounded-md p-4 text-green-400 text-center">
+                                Thanks for your message! I'll get back to you soon.
                             </div>
                         )}
-                        {status === 'error' && (
-                            <div className="bg-red-500/10 border border-red-500/50 rounded-md p-4 text-red-400">
-                                ✗ {errorMessage}
+                        
+                        {submitStatus === 'error' && (
+                            <div className="bg-red-500/10 border border-red-500/30 rounded-md p-4 text-red-400 text-center">
+                                Oops! Something went wrong. Please try emailing me directly at kim@devdactyl.ie
                             </div>
                         )}
 
                         <div className="text-center">
                             <button 
                                 type="submit" 
-                                disabled={status === 'sending'}
+                                disabled={isSubmitting}
                                 className="bg-yellow-400 text-black font-semibold px-8 py-3 rounded-md hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105 text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                             >
-                                {status === 'sending' ? 'Sending...' : 'Send Message'}
+                                {isSubmitting ? 'Sending...' : 'Send Message'}
                             </button>
                         </div>
                     </form>

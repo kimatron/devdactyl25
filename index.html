@@ -171,6 +171,32 @@
           }
       }
 
+      /* FAQ Accordion Styles */
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.faq-answer.is-open {
+    max-height: 1000px; /* Adjust if answers are longer */
+    transition: max-height 0.5s ease-in;
+}
+
+.faq-icon {
+    transition: transform 0.3s ease;
+}
+
+.faq-icon.is-open {
+    transform: rotate(45deg);
+}
+
+.faq-icon svg {
+    stroke: currentColor;
+    color: #facc15; /* yellow-400 */
+}
+
       /* Services Panel Separator */
       .panel::after {
           content: '';
