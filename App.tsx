@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import BlogPage from './components/BlogPage';
 import NotFound from './components/Notfound';
 import BackToTopButton from './components/BackToTopButton';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const App: React.FC = () => {
   const [view, setView] = useState('home');
