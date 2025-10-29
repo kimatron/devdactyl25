@@ -251,7 +251,7 @@ const Blog: React.FC<{ setView: (view: string) => void }> = ({ setView }) => {
             <section id="blog" ref={sectionRef} className="py-20 lg:py-32">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-12">
-                        <h2 className="font-jetbrains text-4xl lg:text-5xl font-black text-white">Growth & Insights</h2>
+                        <h2 className="font-jetbrains text-4xl lg:text-5xl font-black text-white">Unsolicited Advice</h2>
                         <p className="text-lg text-gray-400 mt-2">Connecting unique experiences to digital solutions.</p>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

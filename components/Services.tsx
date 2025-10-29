@@ -7,13 +7,14 @@ const servicesData = [
     {
         title: 'Web Development',
         description: 'High-performance websites and e-commerce platforms built for growth. Responsive, fast, and built to convert.',
-        imageUrl: 'https://picsum.photos/seed/abstractweb/800/800',
+        imageUrl: 'images/desk.png',
+        // 'https://picsum.photos/seed/abstractweb/800/800'
         direction: 'left'
     },
     {
         title: 'Software Development',
         description: 'Bespoke applications and automated workflows engineered to solve your unique business challenges.',
-        imageUrl: 'images/outdoors1.jpg',
+        imageUrl: 'images/dev2.png',
         direction: 'right'
     },
     {

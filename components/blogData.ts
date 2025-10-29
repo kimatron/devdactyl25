@@ -3,7 +3,7 @@ import type { BlogPost } from '../types';
 
 export const blogPostsData: BlogPost[] = [
     {
-        imageUrl: "https://picsum.photos/seed/cayman-cloud/600/400",
+        imageUrl: "images/desk3.png",
         category: "Personal Journey",
         title: "Problem Solving: Above the Waves, Below the Surface & In the Cloud",
         excerpt: "From teaching scuba diving in the Cayman Islands to architecting cloud solutions. How meticulous planning and grace under pressure translate from the ocean depths to the digital frontier.",
@@ -38,7 +38,7 @@ export const blogPostsData: BlogPost[] = [
         `
     },
     {
-        imageUrl: "https://picsum.photos/seed/fitness-pro/600/400",
+        imageUrl: "images/dev4.png",
         category: "Personal Branding",
         title: "From Fit-fluencer to Fitness Pro: Level Up with a Pro Website",
         excerpt: "Your Instagram is great for motivation, but a professional website is where you build a real business. Sell plans, manage bookings, and build a brand that's all you.",

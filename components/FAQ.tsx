@@ -20,7 +20,7 @@ const faqData: FAQItem[] = [
     },
     {
         question: "Can you fix my existing website?",
-        answer: "Yes. I've seen it all. Whether your site is slower than a dial-up connection, looks like it was designed in 1998, or is just plain broken, I can help. I'll take a look under the bonnet, diagnose the problems, and give you an honest, jargon-free plan to get it back into shape. No judgment here; the internet is a scary place."
+        answer: "Yes. I've seen it all. Whether your site is slower than a dial-up connection, looks like it was designed in 1998, or is just plain banjaxed, I can help. I'll take a look under the bonnet, diagnose the problems, and give you an honest, jargon-free plan to get it back into shape. No judgment here; the internet is a scary place."
     },
     {
         question: "Do you use AI to build websites?",

@@ -50,8 +50,8 @@ const BlogPage: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-black/60"></div>
                 <div className="relative z-10 p-6">
-                     <h1 className="font-jetbrains text-4xl lg:text-6xl font-black text-white">Growth & Insights</h1>
-                     <p className="text-lg text-gray-300 mt-4 max-w-2xl mx-auto">Connecting unique experiences to digital solutions.</p>
+                     <h1 className="font-jetbrains text-4xl lg:text-6xl font-black text-white">Unsolicited Advice</h1>
+                     <p className="text-lg text-gray-300 mt-4 max-w-2xl mx-auto">You don't have to take it, but it's worth a look</p>
                 </div>
             </section>
 
