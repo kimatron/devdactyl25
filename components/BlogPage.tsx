@@ -44,8 +44,8 @@ const BlogPage: React.FC = () => {
         <>
             <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center text-center ken-burns-container">
                 <img 
-                    src="https://picsum.photos/seed/bloggalaxy/1920/1080" 
-                    alt="A distant galaxy, representing insights and growth" 
+                    src="images/desk4.png" 
+                    alt="A product shot laptop with devdactyl logo on screen" 
                     className="ken-burns-image"
                 />
                 <div className="absolute inset-0 bg-black/60"></div>

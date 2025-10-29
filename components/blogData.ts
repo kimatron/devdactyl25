@@ -19,7 +19,7 @@ export const blogPostsData: BlogPost[] = [
         `
     },
     {
-        imageUrl: "https://picsum.photos/seed/gourmet-plate/600/400",
+        imageUrl: "images/blog2.png",
         category: "Hospitality",
         title: "Beyond the 'Gram: Why Your Restaurant Needs Its Own Website",
         excerpt: "Stop paying hefty commissions to delivery apps and fighting the algorithm. A custom website is your digital storefront, giving you control over your menu, brand, and profits.",
@@ -38,7 +38,7 @@ export const blogPostsData: BlogPost[] = [
         `
     },
     {
-        imageUrl: "images/dev4.png",
+        imageUrl: "images/blog3.png",
         category: "Personal Branding",
         title: "From Fit-fluencer to Fitness Pro: Level Up with a Pro Website",
         excerpt: "Your Instagram is great for motivation, but a professional website is where you build a real business. Sell plans, manage bookings, and build a brand that's all you.",
@@ -57,7 +57,7 @@ export const blogPostsData: BlogPost[] = [
         `
     },
     {
-        imageUrl: "https://picsum.photos/seed/galaxy-music/600/400",
+        imageUrl: "images/blog4.png",
         category: "Business Growth",
         title: "Your Music, Your Rules: Why Every Musician Needs a Website",
         excerpt: "Tired of platforms taking a cut of your merch and ticket sales? It's time to own your brand. A personal website is your digital home base, not just another profile.",
@@ -75,7 +75,7 @@ export const blogPostsData: BlogPost[] = [
         `
     },
     {
-        imageUrl: "https://picsum.photos/seed/geode-craft/600/400",
+        imageUrl: "images/blog5.png",
         category: "E-commerce",
         title: "Sell Your Craft, Not Your Soul: The Case for Your Own Online Store",
         excerpt: "Etsy is a great starting point, but rising fees and fierce competition can hurt your bottom line. Take control of your artisan business with a beautiful, custom e-commerce site.",
@@ -93,7 +93,7 @@ export const blogPostsData: BlogPost[] = [
         `
     },
     {
-        imageUrl: "https://picsum.photos/seed/galaxy-lens/600/400",
+        imageUrl: "images/blog9.png",
         category: "Branding & Portfolio",
         title: "Your Portfolio, Your Power: Why Instagram Isn't Enough for Photographers",
         excerpt: "Social media is for marketing, but a professional website is for closing deals. Showcase your high-resolution work without compression, algorithms, or distractions.",
@@ -111,7 +111,7 @@ export const blogPostsData: BlogPost[] = [
         `
     },
      {
-        imageUrl: "https://picsum.photos/seed/blueprint-sky/600/400",
+        imageUrl: "images/blog8.png",
         category: "Lead Generation",
         title: "Build Trust, Not Just Houses: A Tradesperson’s Guide to a Killer Website",
         excerpt: "In the trades, reputation is everything. A professional website acts as your digital showroom, showcasing your best work and making it easy for new clients to find you.",
