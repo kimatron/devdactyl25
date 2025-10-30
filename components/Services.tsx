@@ -7,7 +7,7 @@ const servicesData = [
     {
         title: 'Web Development',
         description: 'High-performance websites and e-commerce platforms built for growth. Responsive, fast, and built to convert.',
-        imageUrl: 'images/desk.png',
+        imageUrl: 'images/desk1.png',
         // 'https://picsum.photos/seed/abstractweb/800/800'
         direction: 'left'
     },
