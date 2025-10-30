@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import type { BlogPost } from '../types';
 import { blogPostsData } from './blogData';
+import ShareButtons from './ShareButtons';
 
 declare const gsap: any;
 declare const ScrollTrigger: any;
@@ -146,6 +147,11 @@ export const BlogPostModal: React.FC<{ post: BlogPost; setSelectedPost: (post: B
                             >
                             </div>
 
+                            {/* Share Buttons */}
+                            <div className="mt-12 pt-8 border-t border-[#333333]">
+                                <ShareButtons title={post.title} />
+                            </div>
+
                             {relatedPosts.length > 0 && (
                                 <div className="mt-16 pt-8 border-t border-[#333333]">
                                     <h3 className="text-2xl font-bold text-white mb-6">You Might Also Like</h3>
@@ -251,7 +257,7 @@ const Blog: React.FC<{ setView: (view: string) => void }> = ({ setView }) => {
             <section id="blog" ref={sectionRef} className="py-20 lg:py-32">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-12">
-                        <h2 className="font-jetbrains text-4xl lg:text-5xl font-black text-white">Unsolicited Advice</h2>
+                        <h2 className="font-jetbrains text-4xl lg:text-5xl font-black text-white">Growth & Insights</h2>
                         <p className="text-lg text-gray-400 mt-2">Connecting unique experiences to digital solutions.</p>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
