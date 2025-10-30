@@ -143,7 +143,7 @@ export const blogPostsData: BlogPost[] = [
         `
     },
     {
-        imageUrl: "https://picsum.photos/seed/abyss-ux/600/400",
+        imageUrl: "images/dev3.png",
         category: "UX Design",
         title: "Decompression Stops & User Flows: Lessons from Technical Diving",
         excerpt: "Technical scuba diving is about meticulous planning and risk management. These same principles can build safer, more intuitive user experiences.",
