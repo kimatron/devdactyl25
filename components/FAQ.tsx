@@ -20,11 +20,11 @@ const faqData: FAQItem[] = [
     },
     {
         question: "Can you fix my existing website?",
-        answer: "Yes. I've seen it all. Whether your site is slower than a dial-up connection, looks like it was designed in 1998, or is just plain banjaxed, I can help. I'll take a look under the bonnet, diagnose the problems, and give you an honest, jargon-free plan to get it back into shape. No judgment here; the internet is a scary place."
+        answer: "Yes. I've seen it all. Whether your site is slower than a dial-up connection, looks like it was designed in 1998, or is just plain banjaxed, I can help. I'll take a look under the bonnet, diagnose the problems, and give you an honest, jargon-free plan to get it back into shape. Don't worry, no judgment here - the internet is a scary place, ."
     },
     {
         question: "Do you use AI to build websites?",
-        answer: "Yes, but probably not in the way you're thinking. I've spent time under the hood training and annotating AI models, so I know exactly what they're good for: blitzing through the repetitive, boring, grunt work. What they're not good for is taste, strategy, or that gut feeling that a design just works. AI is the shiny new power tool, but a human still needs to draw the blueprint and build the house. And nobody wants to communicate with a Klanger to get things done."
+        answer: "Yes, but probably not in the way you're thinking. I've spent time under the hood training and annotating AI models, so I know exactly what they're good for: blitzing through the repetitive, painful, grunt work. What they're not good for is original taste, nuances, or that gut feeling that a design just works. AI is the shiny new power tool, but a human still needs to draw the blueprint and build the house. And nobody wants to communicate with a Clanker to get things done."
     },
     {
         question: "How long does it take to build a website?",

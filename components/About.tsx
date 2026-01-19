@@ -47,7 +47,7 @@ const About: React.FC = () => {
             <div className="container mx-auto px-6">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="about-content">
-                        <h2 className="font-jetbrains text-4xl lg:text-5xl font-black text-white mb-6">About Devdactyl</h2>
+                        <h2 className="font-jetbrains text-4xl lg:text-5xl font-black text-white mb-6">About Devdactyl<span className="text-yellow-400">.</span></h2>
                         <p className="text-lg text-gray-300 mb-4">
                            Devdactyl is the creative studio of Kim Hanlon, a developer dedicated to building beautiful, effective websites and software. We combine clean design with robust code to deliver digital solutions that drive results.
                         </p>
