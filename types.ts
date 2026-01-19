@@ -32,7 +32,7 @@ export interface FAQItem {
 }
 
 // New type for Featured Work case studies
-export type Project = {
+export interface Project {
     title: string;
     description: string;
     imageUrl: string;
@@ -42,5 +42,6 @@ export type Project = {
     challenge?: string;
     solution?: string;
     features?: string[];
+    results?: string;
     techStack?: string[];
-};
+}
