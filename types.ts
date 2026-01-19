@@ -14,6 +14,7 @@ export interface BlogPost {
     excerpt: string;
     author: string;
     date: string;
+    slug: string;
     content: string;
 }
 
@@ -29,3 +30,17 @@ export interface FAQItem {
     question: string;
     answer: string;
 }
+
+// New type for Featured Work case studies
+export type Project = {
+    title: string;
+    description: string;
+    imageUrl: string;
+    tags: string[];
+    direction: 'left' | 'right';
+    isGIF?: boolean;
+    challenge?: string;
+    solution?: string;
+    features?: string[];
+    techStack?: string[];
+};
