@@ -56,7 +56,7 @@ const About: React.FC = () => {
                         </p>
                         
                         {/* Social Links */}
-                        <div className="flex gap-4 mt-8">
+                        {/* <div className="flex gap-4 mt-8">
                             <a 
                                 href="https://github.com/kimatron" 
                                 target="_blank" 
@@ -79,7 +79,7 @@ const About: React.FC = () => {
                                 </svg>
                                 <span className="font-medium">LinkedIn</span>
                             </a>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="about-image flex justify-center items-center">
                         <div className="relative w-80 h-80 lg:w-96 lg:h-96">
