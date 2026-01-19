@@ -9,7 +9,7 @@ const projectsData: Project[] = [
     {
         title: 'Solstice',
         description: 'Underground Irish festival platform featuring end-to-end encrypted ticketing, Stripe-powered purchasing, and time-locked GPS coordinates released only to ticket holders.',
-        imageUrl: 'https://images.unsplash.com/photo-1514525253361-bee8a48740ad?auto=format&fit=crop&q=80&w=1200',
+        imageUrl: 'images/solstice.gif',
         tags: ['Encryption', 'Stripe', 'Security'],
         direction: 'left',
         isGIF: true,
@@ -47,7 +47,7 @@ const projectsData: Project[] = [
     {
         title: 'Vinyl Vault Records',
         description: 'E-commerce platform bringing a 40-year market legacy online. Built for a 92-year-old record collector, digitalizing decades of expertise with modern shopping experience.',
-        imageUrl: 'images/webmock.avif',
+        imageUrl: 'images/george.png',
         tags: ['E-commerce', 'Legacy Business', 'Django'],
         direction: 'right',
         challenge: 'Digitizing 40 years of analog record-keeping and creating an intuitive interface for a non-technical owner.',

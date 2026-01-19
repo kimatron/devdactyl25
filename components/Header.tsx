@@ -20,6 +20,25 @@ const Header: React.FC<{ setView: (view: string) => void }> = ({ setView }) => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Lock body scroll when mobile menu is open
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+        } else {
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+        }
+        
+        return () => {
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+        };
+    }, [mobileMenuOpen]);
+
     const navLinks = [
         { name: 'Services', href: '#services' },
         { name: 'About', href: '#about' },
@@ -29,15 +48,13 @@ const Header: React.FC<{ setView: (view: string) => void }> = ({ setView }) => {
 
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: typeof navLinks[0]) => {
         e.preventDefault();
-        setMobileMenuOpen(false); // Close mobile menu
+        setMobileMenuOpen(false);
         
         if (link.isSpecial) {
             setView('blog');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-            // Make sure we're on home view
             setView('home');
-            // Small delay to ensure view has switched
             setTimeout(() => {
                 const element = document.querySelector(link.href);
                 if (element) {
@@ -67,54 +84,22 @@ const Header: React.FC<{ setView: (view: string) => void }> = ({ setView }) => {
     };
 
     return (
-        <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/50 backdrop-blur-lg border-b border-[#333333]' : 'bg-transparent'}`}>
-            <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="#" onClick={handleLogoClick} className="cursor-pointer z-50">
-                    <DevdactylLogo />
-                </a>
-
-                {/* Desktop Navigation */}
-                <nav className="hidden md:flex space-x-8">
-                    {navLinks.map(link => (
-                        <a 
-                            key={link.name} 
-                            href={link.href} 
-                            onClick={(e) => handleNavClick(e, link)}
-                            className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 tracking-wide"
-                        >
-                            {link.name}
-                        </a>
-                    ))}
-                </nav>
-
-                <a 
-                    href="#contact" 
-                    onClick={handleContactClick}
-                    className="hidden md:inline-block bg-yellow-400 text-black font-semibold px-5 py-2 rounded-md hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105"
+        <>
+            {/* Mobile Menu - Render first so header stays on top */}
+            {mobileMenuOpen && (
+                <div 
+                    className="md:hidden fixed inset-0 z-[55] bg-black/95 backdrop-blur-lg"
+                    style={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        height: '100vh',
+                        height: '100dvh', // Dynamic viewport height for mobile
+                    }}
                 >
-                    Get In Touch
-                </a>
-
-                {/* Mobile Hamburger */}
-                <button
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className="md:hidden z-50 text-gray-300 hover:text-yellow-400 transition-colors"
-                    aria-label="Toggle menu"
-                >
-                    {mobileMenuOpen ? (
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    ) : (
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    )}
-                </button>
-
-                {/* Mobile Menu */}
-                <div className={`md:hidden fixed inset-0 bg-black/95 backdrop-blur-lg transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-                    <nav className="flex flex-col items-center justify-center h-full space-y-8">
+                    <nav className="flex flex-col items-center justify-center h-full space-y-8 px-6">
                         {navLinks.map(link => (
                             <a 
                                 key={link.name} 
@@ -134,8 +119,56 @@ const Header: React.FC<{ setView: (view: string) => void }> = ({ setView }) => {
                         </a>
                     </nav>
                 </div>
-            </div>
-        </header>
+            )}
+
+            <header className={`fixed top-0 left-0 w-full z-[60] transition-all duration-300 ${scrolled ? 'bg-black/50 backdrop-blur-lg border-b border-[#333333]' : 'bg-transparent'}`}>
+                <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+                    <a href="#" onClick={handleLogoClick} className="cursor-pointer relative z-[70]">
+                        <DevdactylLogo />
+                    </a>
+
+                    {/* Desktop Navigation */}
+                    <nav className="hidden md:flex space-x-8">
+                        {navLinks.map(link => (
+                            <a 
+                                key={link.name} 
+                                href={link.href} 
+                                onClick={(e) => handleNavClick(e, link)}
+                                className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 tracking-wide"
+                            >
+                                {link.name}
+                            </a>
+                        ))}
+                    </nav>
+
+                    <a 
+                        href="#contact" 
+                        onClick={handleContactClick}
+                        className="hidden md:inline-block bg-yellow-400 text-black font-semibold px-5 py-2 rounded-md hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105"
+                    >
+                        Get In Touch
+                    </a>
+
+                    {/* Mobile Hamburger/X - Always on top */}
+                    <button
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        className="md:hidden relative z-[70] text-gray-300 hover:text-yellow-400 transition-colors p-2 -mr-2"
+                        aria-label="Toggle menu"
+                        aria-expanded={mobileMenuOpen}
+                    >
+                        {mobileMenuOpen ? (
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        ) : (
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        )}
+                    </button>
+                </div>
+            </header>
+        </>
     );
 };
 
