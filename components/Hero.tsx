@@ -113,7 +113,7 @@ const Hero: React.FC = () => {
     useEffect(() => {
         if (typeof gsap === 'undefined') return;
 
-        const tl = gsap.timeline({delay: 0.5});
+        const tl = gsap.timeline({delay: 0.3});
 
         tl.fromTo('.title-part-1', 
             { x: -50, opacity: 0 },
@@ -122,22 +122,22 @@ const Hero: React.FC = () => {
         .fromTo('.title-part-3', 
             { x: 50, opacity: 0 },
             { x: 0, opacity: 1, duration: 1, ease: 'power4.out' },
-            "-=1" // Start at the same time as the first part
+            "-=1"
         )
         .fromTo('.title-part-2',
-            { y: -200, opacity: 0, scale: 1.5 },
-            { y: 0, opacity: 1, scale: 1, duration: 1.5, ease: 'bounce.out'},
-            "-=0.7" // Overlap slightly
+            { y: -50, opacity: 0, rotation: 180 },
+            { y: 0, opacity: 1, rotation: 0, duration: 1.2, ease: 'back.out(1.7)'},
+            "-=0.9"
         );
 
         gsap.fromTo('.tagline', 
             { y: 20, opacity: 0 },
-            { y: 0, opacity: 1, duration: 1, delay: 1.5, ease: 'power2.out'}
+            { y: 0, opacity: 1, duration: 1, delay: 1.2, ease: 'power2.out'}
         );
 
-         gsap.fromTo('.scroll-down', 
+        gsap.fromTo('.scroll-down', 
             { y: -20, opacity: 0 },
-            { y: 0, opacity: 1, duration: 1, delay: 2, ease: 'power2.out', repeat: -1, yoyo: true }
+            { y: 0, opacity: 1, duration: 1, delay: 1.8, ease: 'power2.out', repeat: 3, yoyo: true }
         );
         
     }, []);
