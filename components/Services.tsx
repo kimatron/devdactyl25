@@ -75,6 +75,9 @@ const Services: React.FC = () => {
                             key={service.title}
                             className="service-card group relative"
                         >
+                            {/* Glow effect on hover */}
+                            <div className="absolute -inset-0.5 bg-yellow-400/0 group-hover:bg-yellow-400/10 blur-xl transition-all duration-500 -z-10 rounded-lg"></div>
+                            
                             {/* Image with overlay */}
                             <div className="relative h-72 rounded-lg overflow-hidden mb-6">
                                 <img 
@@ -89,11 +92,15 @@ const Services: React.FC = () => {
                                     {String(index + 1).padStart(2, '0')}
                                 </div>
 
-                                {/* Title overlay */}
+                                {/* Title overlay with underline */}
                                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                                    <h3 className="font-jetbrains text-2xl font-black text-white group-hover:text-yellow-400 transition-colors duration-300">
-                                        {service.title}
-                                    </h3>
+                                    <div className="relative inline-block">
+                                        <h3 className="font-jetbrains text-2xl font-black text-white group-hover:text-yellow-400 transition-colors duration-300">
+                                            {service.title}
+                                        </h3>
+                                        {/* Underline with gap */}
+                                        <div className="absolute -bottom-2 left-0 h-1 bg-yellow-400 w-0 group-hover:w-full transition-all duration-500"></div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -101,9 +108,6 @@ const Services: React.FC = () => {
                             <p className="text-gray-300 text-base leading-relaxed px-2">
                                 {service.description}
                             </p>
-
-                            {/* Bottom accent line */}
-                            <div className="absolute bottom-0 left-0 h-1 bg-yellow-400 w-0 group-hover:w-full transition-all duration-500 rounded-full"></div>
                         </div>
                     ))}
                 </div>
