@@ -1,5 +1,13 @@
-
 import type { BlogPost } from '../types';
+
+// Helper function to generate a slug from a title
+const generateSlug = (title: string): string => {
+    return title
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '') // Remove non-alphanumeric chars
+        .replace(/\s+/g, '-')       // Replace spaces with -
+        .replace(/-+/g, '-');      // Replace multiple - with single -
+};
 
 export const blogPostsData: BlogPost[] = [
     {
@@ -9,6 +17,8 @@ export const blogPostsData: BlogPost[] = [
         excerpt: "From teaching scuba diving in the Cayman Islands to architecting cloud solutions. How meticulous planning and grace under pressure translate from the ocean depths to the digital frontier.",
         author: "Kim Hanlon",
         date: "Nov 15, 2023",
+        // Add slug
+        slug: generateSlug("Problem Solving: Above the Waves, Below the Surface & In the Cloud"),
         content: `
             <p class="mb-4">On the surface, the turquoise waters of the Cayman Islands and the abstract architecture of the cloud seem worlds apart. One is tangible, governed by physics and physiology; the other is a digital construct of servers and code. But my journey from a PADI Scuba Instructor to a tech professional has taught me that the core principles of problem-solving are universal.</p>
             <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Meticulous Planning: The Ultimate Redundancy</h4>
@@ -25,6 +35,7 @@ export const blogPostsData: BlogPost[] = [
         excerpt: "Stop paying hefty commissions to delivery apps and fighting the algorithm. A custom website is your digital storefront, giving you control over your menu, brand, and profits.",
         author: "Kim Hanlon",
         date: "Nov 12, 2023",
+        slug: generateSlug("Beyond the 'Gram: Why Your Restaurant Needs Its Own Website"),
         content: `
             <p class="mb-4">Your food is art, but are you letting delivery apps and social media platforms frame it for you? Relying solely on third-party services means you're losing money on every order and handing over your valuable customer relationships.</p>
             <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Own Your Digital Kitchen</h4>
@@ -32,7 +43,7 @@ export const blogPostsData: BlogPost[] = [
             <ul class="list-disc list-inside mb-4 space-y-2">
                 <li><strong>Eliminate Commission Fees:</strong> Integrate your own online ordering system and <span class="text-yellow-400 font-semibold">stop paying 15-30%</span> to delivery apps. The savings go directly to your bottom line.</li>
                 <li><strong>Control Your Brand:</strong> Showcase your dishes with stunning, high-resolution photography and present your menu exactly how you want. No more generic, templated layouts.</li>
-                <li><strong>Streamline Reservations:</strong> A built-in booking system makes it easy for customers to reserve a table, reducing phone calls and preventing double-bookings.</li>
+                <li><strong>Streamline Reservations:</b> A built-in booking system makes it easy for customers to reserve a table, reducing phone calls and preventing double-bookings.</li>
                 <li><strong>Build Customer Loyalty:</strong> Capture emails and build a direct marketing channel to announce new menus, special events, and promotions to your most loyal patrons.</li>
             </ul>
         `
@@ -44,6 +55,7 @@ export const blogPostsData: BlogPost[] = [
         excerpt: "Your Instagram is great for motivation, but a professional website is where you build a real business. Sell plans, manage bookings, and build a brand that's all you.",
         author: "Kim Hanlon",
         date: "Nov 09, 2023",
+        slug: generateSlug("From Fit-fluencer to Fitness Pro: Level Up with a Pro Website"),
         content: `
             <p class="mb-4">You've built a strong following on social media with your fitness expertise. But when it comes to converting that following into a sustainable business, an Instagram bio link just doesn't cut it. It's time to build a professional headquarters for your brand.</p>
             <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Your 24/7 Digital Gym</h4>
@@ -63,6 +75,7 @@ export const blogPostsData: BlogPost[] = [
         excerpt: "Tired of platforms taking a cut of your merch and ticket sales? It's time to own your brand. A personal website is your digital home base, not just another profile.",
         author: "Kim Hanlon",
         date: "Nov 05, 2023",
+        slug: generateSlug("Your Music, Your Rules: Why Every Musician Needs a Website"),
         content: `
             <p class="mb-4">Platforms like Spotify and Bandcamp are essential for discovery, but they're rented space. You're bound by their rules, their branding, and—most importantly—their fees. When you sell merch or tickets through a third party, a percentage of your hard-earned money goes straight into their pocket.</p>
             <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Take Back Control</h4>
@@ -81,6 +94,7 @@ export const blogPostsData: BlogPost[] = [
         excerpt: "Etsy is a great starting point, but rising fees and fierce competition can hurt your bottom line. Take control of your artisan business with a beautiful, custom e-commerce site.",
         author: "Kim Hanlon",
         date: "Oct 28, 2023",
+        slug: generateSlug("Sell Your Craft, Not Your Soul: The Case for Your Own Online Store"),
         content: `
             <p class="mb-4">As a creator of unique, handcrafted goods, your brand is everything. While marketplaces like Etsy give you a platform, they also put you in a crowded digital flea market where you're just one stall among thousands. It's hard to stand out, and the constant algorithm changes can feel like you're building your business on shifting sand.</p>
              <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Build Your Own Brand, Not Someone Else's</h4>
@@ -99,13 +113,14 @@ export const blogPostsData: BlogPost[] = [
         excerpt: "Social media is for marketing, but a professional website is for closing deals. Showcase your high-resolution work without compression, algorithms, or distractions.",
         author: "Kim Hanlon",
         date: "Oct 25, 2023",
+        slug: generateSlug("Your Portfolio, Your Power: Why Instagram Isn't Enough for Photographers"),
         content: `
             <p class="mb-4">Instagram is a fantastic tool for getting your photos seen, but it's a terrible place to host a professional portfolio. Your best work is compressed, cropped to fit a square, and sandwiched between ads and cat videos. It screams 'amateur', even if your work is world-class.</p>
             <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">The Professional's Choice</h4>
             <p class="mb-4">A potential client looking to hire you for a wedding, a commercial shoot, or to buy a print needs more than a feed of squares. They need a professional, curated experience.</p>
              <ul class="list-disc list-inside mb-4 space-y-2">
                 <li><strong>High-Resolution Showcase:</strong> Display your images in <span class="text-yellow-400 font-semibold">stunning, full-screen detail</span>, exactly as you intended them to be seen.</li>
-                <li><strong>Curated Galleries:</strong> Organize your work into distinct projects or categories (e.g., Weddings, Portraits, Landscapes) to show your range and expertise.</li>
+                <li><strong>Curated Galleries:</b> Organize your work into distinct projects or categories (e.g., Weddings, Portraits, Landscapes) to show your range and expertise.</li>
                 <li><strong>Business Tools:</strong> Integrate essential tools like a contact form for bookings, private client galleries for proofing, and even a print store to create new revenue streams.</li>
             </ul>
         `
@@ -117,6 +132,7 @@ export const blogPostsData: BlogPost[] = [
         excerpt: "In the trades, reputation is everything. A professional website acts as your digital showroom, showcasing your best work and making it easy for new clients to find you.",
         author: "Kim Hanlon",
         date: "Oct 22, 2023",
+        slug: generateSlug("Build Trust, Not Just Houses: A Tradesperson’s Guide to a Killer Website"),
         content: `
              <p class="mb-4">When a homeowner has a leaky pipe or needs a new kitchen, what's the first thing they do? They search online. If you're not there, you're invisible. Relying on directory sites is a gamble—you're listed right next to your biggest competitors, often forcing you to compete on price alone.</p>
             <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Your 24/7 Salesperson</h4>
@@ -135,6 +151,7 @@ export const blogPostsData: BlogPost[] = [
         excerpt: "Learn how the principles of building and releasing tension in a DJ set can create unforgettable, rhythm-driven web animations with GSAP.",
         author: "Kim Hanlon",
         date: "Oct 18, 2023",
+        slug: generateSlug("The Art of the Drop: Translating DJing Skills into Web Animation Timing"),
         content: `
             <p class="mb-4">As a former electronic music DJ, I spent years learning how to control the energy of a room. It's all about tension and release, building anticipation to a fever pitch before 'the drop' sends the crowd into a frenzy. It struck me recently how similar this is to crafting compelling web animations.</p>
             <p class="mb-4">In web design, <span class="text-yellow-400 font-semibold">'the drop' is that moment of payoff</span>—a button that springs to life, a page transition that feels seamless, or a hero title that animates in with authority. Using a tool like GSAP (GreenSock Animation Platform), we can orchestrate these moments with the same precision as a DJ mixing tracks.</p>
@@ -149,9 +166,63 @@ export const blogPostsData: BlogPost[] = [
         excerpt: "Technical scuba diving is about meticulous planning and risk management. These same principles can build safer, more intuitive user experiences.",
         author: "Kim Hanlon",
         date: "Oct 11, 2023",
+        slug: generateSlug("Decompression Stops & User Flows: Lessons from Technical Diving"),
         content: `
             <p class="mb-4">In technical scuba diving, you don't just jump in the water. Every minute, every piece of gear, and every potential emergency is planned for. Your 'user flow' is your dive plan, and a 'bug' could have serious consequences. This mindset is incredibly valuable in UX design.</p>
             <p class="mb-4"><span class="text-yellow-400 font-semibold">'Decompression stops'</span> in diving are mandatory pauses on the way up to safely release nitrogen from the body. In UX, these are moments where we should intentionally slow the user down—like a confirmation modal before deleting important data—to prevent critical errors.</p>
+        `
+    },
+    // New blog posts for SEO
+    {
+        imageUrl: "https://picsum.photos/seed/code-wexford/600/400", // Placeholder image
+        category: "Local SEO",
+        title: "Boosting Your Business in Wexford: The Power of Local Web Development",
+        excerpt: "Discover how a custom website tailored for the Wexford market can attract local customers and outshine competitors.",
+        author: "Kim Hanlon",
+        date: "Dec 01, 2023",
+        slug: generateSlug("Boosting Your Business in Wexford: The Power of Local Web Development"),
+        content: `
+            <p class="mb-4">For businesses in Wexford, standing out in the digital landscape is more important than ever. While global reach is appealing, often your strongest customer base is right here in County Wexford. This is where local web development and a strong online presence become invaluable.</p>
+            <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Why Local Focus Matters for Wexford Businesses</h4>
+            <p class="mb-4">When potential customers in Enniscorthy, Gorey, or Wexford town search for "web design Wexford" or "software development Wexford," you want your business to be the first they see. A website built with a local focus:</p>
+            <ul class="list-disc list-inside mb-4 space-y-2">
+                <li><strong>Connects with the Community:</strong> Demonstrates an understanding of the local market and local needs.</li>
+                <li><strong>Improves Search Engine Visibility:</strong> Google prioritizes local businesses for local searches.</li>
+                <li><strong>Builds Trust:</strong> Customers often prefer to work with local providers they can meet face-to-face.</li>
+            </ul>
+            <p class="mb-4">At Devdactyl, we specialize in creating custom web solutions for Wexford businesses. We understand the nuances of the local market and how to craft a digital presence that resonates with your community while driving growth.</p>
+            <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Key Elements of a Locally Optimized Website</h4>
+            <ul class="list-disc list-inside mb-4 space-y-2">
+                <li><strong>Local Keywords:</strong> Integrating "Wexford web design," "software developer Wexford," and similar terms naturally into your site's content.</li>
+                <li><strong>Google My Business Integration:</strong> Ensuring your website is linked to a fully optimized Google Business Profile.</li>
+                <li><strong>Location-Specific Content:</strong> Blog posts or service pages that address specific needs or events within Wexford.</li>
+                <li><strong>Mobile Responsiveness:</strong> A significant portion of local searches happen on mobile devices.</li>
+            </ul>
+            <p class="mb-4">Don't let your Wexford business get lost in the digital noise. Invest in a web presence that speaks directly to your local audience and converts browsers into loyal customers. Let's build something great, right here in Wexford.</p>
+        `
+    },
+    {
+        imageUrl: "https://picsum.photos/seed/wexford-web-design/600/400", // Placeholder image
+        category: "Web Design",
+        title: "The Essential Guide to Web Design for Small Businesses in Wexford",
+        excerpt: "From eye-catching aesthetics to powerful functionality, learn what makes a small business website successful in today's digital age.",
+        author: "Kim Hanlon",
+        date: "Nov 28, 2023",
+        slug: generateSlug("The Essential Guide to Web Design for Small Businesses in Wexford"),
+        content: `
+            <p class="mb-4">For small businesses across Wexford, a website is no longer a luxury – it's a necessity. It acts as your 24/7 storefront, your primary marketing tool, and a crucial touchpoint for potential customers. But what makes a truly effective website, especially for local enterprises?</p>
+            <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Beyond a Digital Brochure: What Your Website Needs</h4>
+            <p class="mb-4">Many small business owners think a website just needs to "look nice." While aesthetics are important, a high-performing website for a Wexford business needs to be a functional asset:</p>
+            <ul class="list-disc list-inside mb-4 space-y-2">
+                <li><strong>Clear Call-to-Actions (CTAs):</strong> Make it obvious how visitors can contact you, request a quote, or make a purchase.</li>
+                <li><strong>Mobile Responsiveness:</strong> With most searches happening on phones, your site *must* look and work perfectly on all devices.</li>
+                <li><strong>Fast Loading Speed:</strong> Users (and Google) hate slow websites. Optimization is key.</li>
+                <li><strong>SEO-Friendly Structure:</strong> Designed from the ground up to be found by search engines, especially for local searches like "web design Wexford" or "plumber Wexford."</li>
+                <li><strong>Security (HTTPS):</strong> Essential for trust and search rankings.</li>
+            </ul>
+            <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Choosing the Right Web Design Partner in Wexford</h4>
+            <p class="mb-4">When you're looking for web design services in Wexford, consider a partner who understands your business goals and the local market. At Devdactyl, we focus on creating bespoke websites that are not just visually appealing but also strategically built to help your business grow. We prioritize user experience, search engine optimization, and robust functionality to ensure your investment delivers real results.</p>
+            <p class="mb-4">Whether you're a cafe in New Ross, a boutique in Gorey, or a service provider in Wexford town, a well-designed website can be your most powerful tool for attracting new clients and serving existing ones better. Let's discuss how we can elevate your online presence.</p>
         `
     }
 ];
