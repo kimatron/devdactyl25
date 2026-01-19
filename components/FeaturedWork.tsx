@@ -7,31 +7,49 @@ declare const ScrollTrigger: any;
 
 const projectsData: Project[] = [
     {
+        title: 'Solstice',
+        description: 'Underground Irish festival platform featuring end-to-end encrypted ticketing, Stripe-powered purchasing, and time-locked GPS coordinates released only to ticket holders.',
+        imageUrl: 'https://images.unsplash.com/photo-1514525253361-bee8a48740ad?auto=format&fit=crop&q=80&w=1200',
+        tags: ['Encryption', 'Stripe', 'Security'],
+        direction: 'left',
+        isGIF: true,
+        challenge: 'Maintaining total secrecy for location data while managing high-concurrency ticket drops and preventing scalping.',
+        solution: 'Custom server-side decryption logic that reveals coordinates exactly 48 hours before the event, with one-time-use QR codes and device fingerprinting.',
+        features: [
+            'End-to-end encrypted ticketing system',
+            'Time-locked GPS coordinate release',
+            'Stripe integration with fraud detection',
+            'One-time-use QR codes with device binding',
+            'Real-time inventory management'
+        ],
+        techStack: ['Next.js', 'PostgreSQL', 'AES-256', 'Stripe', 'Redis']
+    },
+    {
         title: 'Dive Centre Pro',
         description: 'Comprehensive dive centre management system with real-time dive conditions API, customer records, inventory tracking, and integrated retail engagement platform.',
         imageUrl: 'images/diveshop.png',
         tags: ['Full-Stack', 'API Integration', 'Retail POS'],
-        direction: 'left',
+        direction: 'right',
         challenge: 'Creating a unified platform to manage dive operations, customer data, and retail in one seamless experience.',
         solution: 'Integrated third-party APIs for real-time ocean conditions and built a custom POS system tailored to dive shop workflows.',
         techStack: ['React', 'Node.js', 'PostgreSQL', 'Stripe']
     },
-    {
-        title: 'EMJ Camera',
-        description: 'Stunning photographer portfolio featuring GSAP-powered 3D animations, custom client portal for proofing galleries, and integrated print store with Stripe checkout.',
-        imageUrl: 'images/emj.jpg',
-        tags: ['GSAP', '3D', 'E-commerce'],
-        direction: 'right',
-        challenge: 'Creating a visually striking portfolio that also serves as a functional business tool for client management.',
-        solution: 'Leveraged GSAP for smooth 3D transitions and built a secure client portal with watermarked proofing galleries.',
-        techStack: ['React', 'GSAP', 'Stripe', 'AWS S3']
-    },
+    // {
+    //     title: 'EMJ Camera',
+    //     description: 'Stunning photographer portfolio featuring GSAP-powered 3D animations, custom client portal for proofing galleries, and integrated print store with Stripe checkout.',
+    //     imageUrl: 'images/emj.jpg',
+    //     tags: ['GSAP', '3D', 'E-commerce'],
+    //     direction: 'left',
+    //     challenge: 'Creating a visually striking portfolio that also serves as a functional business tool for client management.',
+    //     solution: 'Leveraged GSAP for smooth 3D transitions and built a secure client portal with watermarked proofing galleries.',
+    //     techStack: ['React', 'GSAP', 'Stripe', 'AWS S3']
+    // },
     {
         title: 'Vinyl Vault Records',
         description: 'E-commerce platform bringing a 40-year market legacy online. Built for a 92-year-old record collector, digitalizing decades of expertise with modern shopping experience.',
         imageUrl: 'images/webmock.avif',
         tags: ['E-commerce', 'Legacy Business', 'Django'],
-        direction: 'left',
+        direction: 'right',
         challenge: 'Digitizing 40 years of analog record-keeping and creating an intuitive interface for a non-technical owner.',
         solution: 'Built a custom CMS with simplified inventory management and one-click order processing.',
         techStack: ['Django', 'Python', 'PostgreSQL', 'Stripe']
@@ -41,7 +59,7 @@ const projectsData: Project[] = [
         description: 'Crowdsourced pint tracker leveraging real-time community data to find the best-priced pints. Built with Next.js, Supabase, and live location services.',
         imageUrl: 'images/site1.png',
         tags: ['Next.js', 'Supabase', 'Real-time'],
-        direction: 'right',
+        direction: 'left',
         isGIF: true,
         challenge: 'Building a real-time crowdsourced database that stays current and prevents spam submissions.',
         solution: 'Implemented geolocation verification and community moderation with Supabase real-time subscriptions.',
