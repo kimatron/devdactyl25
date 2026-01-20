@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { blogPostsData } from './blogData';
 import ShareButtons from './ShareButtons';
 import type { BlogPost } from '../types';
