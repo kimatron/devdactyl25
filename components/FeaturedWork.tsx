@@ -64,7 +64,7 @@ const projectsData: Project[] = [
     {
         title: 'Vinyl Vault Records',
         description: 'A 92-year-old vinyl collector with 40 years of market experience needed to take his business online without losing his personal touch. Devdactyl built a custom e-commerce platform with simplified inventory management, capturing decades of expertise in a modern shopping experience. The store processed €12,000 in sales within the first three months.',
-        imageUrl: 'images/webmock.avif',
+        imageUrl: 'images/george.png',
         tags: ['E-commerce', 'Custom CMS', 'Legacy Migration'],
         direction: 'right',
         challenge: 'Four decades of handwritten records, index cards, and institutional knowledge needed digitizing. The owner had zero technical background but deep expertise in rare vinyl. The system had to be dead simple while handling complex inventory (condition grading, rarity, pricing variations).',
@@ -82,7 +82,7 @@ const projectsData: Project[] = [
     {
         title: 'Bang For Your Buck',
         description: 'A side project that became a local hit - a crowdsourced platform tracking pint prices across Ireland. Built with real-time updates, geolocation verification, and community moderation to maintain data accuracy. Currently tracking prices at 200+ venues with active daily submissions from the community.',
-        imageUrl: 'images/site1.png',
+        imageUrl: 'images/bangbuck.png',
         tags: ['Real-time', 'Community', 'Mobile-first'],
         direction: 'left',
         isGIF: true,

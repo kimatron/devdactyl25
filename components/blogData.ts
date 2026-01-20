@@ -10,22 +10,24 @@ const generateSlug = (title: string): string => {
 };
 
 export const blogPostsData: BlogPost[] = [
-    {
+{
         imageUrl: "images/desk3.png",
         category: "Personal Journey",
         title: "Problem Solving: Above the Waves, Below the Surface & In the Cloud",
-        excerpt: "From teaching scuba diving in the Cayman Islands to architecting cloud solutions. How meticulous planning and grace under pressure translate from the ocean depths to the digital frontier.",
+        excerpt: "From teaching scuba diving in the Cayman Islands to building cloud solutions. Turns out, meticulous planning and staying calm when shit goes wrong works pretty much everywhere.",
         author: "Kim Hanlon",
         date: "Nov 15, 2023",
-        // Add slug
         slug: generateSlug("Problem Solving: Above the Waves, Below the Surface & In the Cloud"),
         content: `
-            <p class="mb-4">On the surface, the turquoise waters of the Cayman Islands and the abstract architecture of the cloud seem worlds apart. One is tangible, governed by physics and physiology; the other is a digital construct of servers and code. But my journey from a PADI Scuba Instructor to a tech professional has taught me that the core principles of problem-solving are universal.</p>
-            <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Meticulous Planning: The Ultimate Redundancy</h4>
-            <p class="mb-4">In technical diving, you plan every detail: gas consumption, bottom time, decompression stops, and multiple backup plans for when things go wrong. You never descend without knowing exactly how you'll ascend. This mindset is identical to designing resilient cloud infrastructure. We plan for server failures, traffic spikes, and security threats, building in redundancies and fail-safes. <span class="text-yellow-400 font-semibold">The goal in both fields is the same: to create a system so robust that it can gracefully handle the unexpected.</span></p>
-            <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Solving Problems Under Pressure</h4>
-            <p class="mb-4">At 100 feet underwater, panic is not an option when a piece of gear malfunctions. You learn to stay calm, assess the situation, and work through the problem systematically. The feeling is surprisingly similar to a critical system alert at 3 AM. The environment is different, but the skill is the same: a methodical, calm approach to troubleshooting under pressure.</p>
-            <p class="mb-4">Whether I'm helping a student manage their buoyancy or helping a client scale their application, my job is to be a guide. It's about taking complex, intimidating subjects and making them understandable and manageable. The tools may have changed from fins and a regulator to a keyboard and a terminal, but the mission remains the same: to solve problems and empower others to succeed.</p>
+            <p class="mb-4">The Cayman Islands' turquoise waters and Azure's cloud infrastructure don't have much in common at first glance. One's all physics and physiology, the other's servers and code. But after spending years as a PADI instructor and then pivoting to tech, I've realized the actual work is surprisingly similar.</p>
+            
+            <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Plan Everything, Twice</h4>
+            <p class="mb-4">Technical diving is obsessive planning. You calculate gas consumption, bottom time, deco stops, and then you plan for when it all goes to hell. You don't go down without knowing exactly how you're coming back up. Building cloud infrastructure is the exact same mindset. You plan for servers dying, traffic spikes, security breaches - multiple backup plans for the inevitable clusterfuck. <span class="text-yellow-400 font-semibold">Both jobs are about building systems robust enough to handle things going wrong, because they will.</span></p>
+            
+            <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Stay Calm When Everything's on Fire</h4>
+            <p class="mb-4">At 30 meters when your gear fails, panicking gets you killed. You stay calm, work through it systematically, fix the problem. It's weirdly similar to getting a critical system alert at 3 AM. Different environment, same skill: methodical troubleshooting when your heart rate's trying to spike.</p>
+            
+            <p class="mb-4">Whether I'm coaching someone through buoyancy control or helping a client scale their app, it's the same job: take something complex and intimidating, break it down, make it manageable. The tools changed - fins and regulator swapped for a keyboard and terminal - but the core work hasn't. Solve problems. Help people succeed. Don't overcomplicate it.</p>
         `
     },
     {
