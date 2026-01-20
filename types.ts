@@ -36,6 +36,7 @@ export interface Project {
     title: string;
     description: string;
     imageUrl: string;
+    slug: string;
     tags: string[];
     direction: 'left' | 'right';
     isGIF?: boolean;

@@ -5,11 +5,12 @@ import type { Project } from '../types';
 declare const gsap: any;
 declare const ScrollTrigger: any;
 
-const projectsData: Project[] = [
+export const projectsData: Project[] = [
     {
         title: 'Solstice',
+        slug: 'solstice',
         description: 'An underground Irish festival required total operational secrecy until launch day. Devdactyl built an encrypted ticketing platform with time-locked GPS coordinates, high-volume Stripe integration, and anti-scalping measures. The system handled 300+ ticket sales with zero security breaches, maintaining complete location confidentiality until exactly 48 hours before gates opened.',
-        imageUrl: 'images/solstice.gif',
+        imageUrl: '/images/solstice.gif',
         tags: ['Security', 'E-commerce', 'Real-time'],
         direction: 'left',
         isGIF: true,
@@ -27,8 +28,9 @@ const projectsData: Project[] = [
     },
     {
         title: 'Dive Centre Pro',
+        slug: 'dive-centre-pro',
         description: 'A Grand Cayman dive centre needed a unified platform to replace their fragmented systems. Devdactyl delivered an all-in-one management solution integrating real-time ocean conditions, customer records, equipment inventory, and retail POS. The system now processes 200+ bookings monthly with automated customer communications and live weather data.',
-        imageUrl: 'images/diveshop.png',
+        imageUrl: '/images/diveshop.png',
         tags: ['SaaS', 'API Integration', 'Business Tools'],
         direction: 'right',
         challenge: 'The dive centre was juggling spreadsheets, paper logs, and separate systems for bookings, retail, and customer data. They needed everything integrated but could not afford downtime during their busy season. Staff had varying technical skill levels.',
@@ -45,8 +47,9 @@ const projectsData: Project[] = [
     },
     {
         title: 'Sonny\'s Snaps',
+        slug: 'sonnys-snaps',
         description: 'A professional photographer needed more than a portfolio - they needed a client management system. Devdactyl created a visually stunning site with GSAP 3D animations, secure client galleries for proofing, and an integrated print store. The platform now handles client proofing workflows and generates additional revenue through automated print fulfillment.',
-        imageUrl: 'images/sonsnap.png',
+        imageUrl: '/images/sonsnap.png',
         tags: ['Portfolio', 'Client Portal', 'E-commerce'],
         direction: 'left',
         challenge: 'The photographer was spending hours emailing proofs back and forth, manually tracking print orders, and struggling to stand out in a saturated market. They needed a memorable portfolio that also streamlined their business operations.',
@@ -63,8 +66,9 @@ const projectsData: Project[] = [
     },
     {
         title: 'Vinyl Vault Records',
+        slug: 'vinyl-vault-records',
         description: 'A 92-year-old vinyl collector with 40 years of market experience needed to take his business online without losing his personal touch. Devdactyl built a custom e-commerce platform with simplified inventory management, capturing decades of expertise in a modern shopping experience. The store processed €12,000 in sales within the first three months.',
-        imageUrl: 'images/george.png',
+        imageUrl: '/images/george.png',
         tags: ['E-commerce', 'Custom CMS', 'Legacy Migration'],
         direction: 'right',
         challenge: 'Four decades of handwritten records, index cards, and institutional knowledge needed digitizing. The owner had zero technical background but deep expertise in rare vinyl. The system had to be dead simple while handling complex inventory (condition grading, rarity, pricing variations).',
@@ -81,6 +85,7 @@ const projectsData: Project[] = [
     },
     {
         title: 'Bang For Your Buck',
+        slug: '/bang-for-your-buck',
         description: 'A side project that became a local hit - a crowdsourced platform tracking pint prices across Ireland. Built with real-time updates, geolocation verification, and community moderation to maintain data accuracy. Currently tracking prices at 200+ venues with active daily submissions from the community.',
         imageUrl: 'images/bangbuck.png',
         tags: ['Real-time', 'Community', 'Mobile-first'],

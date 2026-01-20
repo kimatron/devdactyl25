@@ -1,6 +1,5 @@
-// App.tsx - FULL REWRITE with routing
 import React from 'react';
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -18,6 +17,7 @@ import BackToTopButton from './components/BackToTopButton';
 import CaseStudy from './components/CaseStudy';
 import SmoothPageLoader from './components/Smoothpageloader.tsx';
 import ScrollProgress from './components/ScrollProgress.tsx';
+import { projectsData } from './components/FeaturedWork';
 import type { Project } from './types';
 
 const HomePage: React.FC = () => {
@@ -47,14 +47,34 @@ const HomePage: React.FC = () => {
 };
 
 const CaseStudyPage: React.FC = () => {
+  const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  // You'll need to get the project from URL params or props
-  // This is simplified - you'd actually fetch by slug
-  const [selectedProject] = React.useState<Project | null>(null);
+  
+  const project = projectsData.find(p => p.slug === slug);
 
-  return selectedProject ? (
-    <CaseStudy project={selectedProject} onBack={() => navigate('/')} />
-  ) : null;
+  if (!project) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-white mb-4">Project Not Found</h1>
+          <button 
+            onClick={() => navigate('/')}
+            className="bg-yellow-400 text-black font-semibold px-6 py-2 rounded-md hover:bg-yellow-500"
+          >
+            Back to Home
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <Header />
+      <CaseStudy project={project} onBack={() => navigate('/')} />
+      <Footer />
+    </>
+  );
 };
 
 const App: React.FC = () => {
