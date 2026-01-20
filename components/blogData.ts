@@ -296,5 +296,196 @@ export const blogPostsData: BlogPost[] = [
             <p class="mb-4">When you're looking for web design services in Wexford, consider a partner who understands your business goals and the local market. At Devdactyl, we focus on creating bespoke websites that are not just visually appealing but also strategically built to help your business grow. We prioritize user experience, search engine optimization, and robust functionality to ensure your investment delivers real results.</p>
             <p class="mb-4">Whether you're a cafe in New Ross, a boutique in Gorey, or a service provider in Wexford town, a well-designed website can be your most powerful tool for attracting new clients and serving existing ones better. Let's discuss how we can elevate your online presence.</p>
         `
-    }
+    },
+{
+    imageUrl: "/images/blog7.png",
+    category: "Pricing & Value",
+    title: "What You're Actually Paying For: Budget vs. Premium Websites",
+    excerpt: "Honest breakdown of what you get at different price points. No scary numbers, just what's actually different between a basic site and a premium one.",
+    author: "Kim Hanlon",
+    date: "Jan 18, 2025",
+    slug: generateSlug("What You're Actually Paying For: Budget vs. Premium Websites"),
+    content: `
+        <p class="mb-4">Client asks: "Why does one developer quote me one price and another quotes me ten times that for the same website?"</p>
+        
+        <p class="mb-4">Short answer: They're not quoting you for the same website. Here's what you're actually getting at different levels.</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">The Budget-Friendly Site</h4>
+        <p class="mb-4"><strong>What it is:</strong> A solid, professional site built with a platform like WordPress, Squarespace, or Shopify. Custom styling to match your brand, basic SEO setup, mobile responsive.</p>
+        
+        <p class="mb-4"><strong>Best for:</strong> Small businesses, service providers, portfolios, straightforward e-commerce with standard products.</p>
+        
+        <p class="mb-4"><strong>What you get:</strong></p>
+        <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>5-10 pages of content</li>
+            <li>Contact form, Google Maps integration</li>
+            <li>Basic SEO (meta tags, sitemap, fast loading)</li>
+            <li>Mobile responsive design</li>
+            <li>Content management system so you can update text/images yourself</li>
+            <li>A couple rounds of revisions</li>
+        </ul>
+        
+        <p class="mb-4"><strong>What you don't get:</strong> Custom functionality, complex integrations, heavy design customization, ongoing support after launch.</p>
+        
+        <p class="mb-4"><strong>Timeline:</strong> 2-4 weeks typically.</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">The Mid-Range Custom Site</h4>
+        <p class="mb-4"><strong>What it is:</strong> Custom-built or heavily customized platform solution. Proper discovery phase, unique design, some custom features.</p>
+        
+        <p class="mb-4"><strong>Best for:</strong> Growing businesses, e-commerce with specific needs, companies where the website is a core business tool.</p>
+        
+        <p class="mb-4"><strong>What you get:</strong></p>
+        <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Everything from the budget site, plus:</li>
+            <li>Custom design (not template-based)</li>
+            <li>Discovery phase - we actually figure out what you need before building anything</li>
+            <li>Custom functionality (booking systems, calculators, advanced forms, member areas)</li>
+            <li>Third-party integrations (CRM, email marketing, payment processors)</li>
+            <li>More sophisticated SEO strategy</li>
+            <li>Performance optimization</li>
+            <li>Training on how to use everything</li>
+            <li>Post-launch support period</li>
+        </ul>
+        
+        <p class="mb-4"><strong>Timeline:</strong> 6-12 weeks depending on complexity.</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">The Premium Web Application</h4>
+        <p class="mb-4"><strong>What it is:</strong> Fully custom web application built from scratch. This isn't a "website" anymore - it's software.</p>
+        
+        <p class="mb-4"><strong>Best for:</strong> Businesses where the website IS the product (SaaS, marketplaces, complex platforms), or where competitive advantage depends on unique functionality.</p>
+        
+        <p class="mb-4"><strong>What you get:</strong></p>
+        <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Everything from the mid-range site, plus:</li>
+            <li>Built from the ground up with modern frameworks (React, Django, etc.)</li>
+            <li>Scalable architecture that can handle serious growth</li>
+            <li>User accounts, dashboards, complex workflows</li>
+            <li>Advanced integrations with your existing systems</li>
+            <li>Custom admin panels for managing everything</li>
+            <li>Proper testing, security audits, documentation</li>
+            <li>Ongoing maintenance and support contracts</li>
+            <li>Usually a team working on it, not just one person</li>
+        </ul>
+        
+        <p class="mb-4"><strong>Timeline:</strong> 3-6 months minimum.</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">So Which Do You Need?</h4>
+        <p class="mb-4">Honestly? Most small businesses need the budget-friendly option. If you're a cafe, a tradesperson, a consultant, a small shop - you don't need custom-built software. You need something professional that shows your work and makes it easy for people to contact you.</p>
+        
+        <p class="mb-4">You need the mid-range option if your business is growing, if your website needs to do specific things that templates can't handle, or if your brand positioning requires something more distinctive.</p>
+        
+        <p class="mb-4">You need the premium option if your website is your actual product, or if you have genuinely complex business logic that off-the-shelf solutions can't accommodate.</p>
+        
+        <p class="mb-4"><span class="text-yellow-400 font-semibold">My job is to recommend the right solution, not the most expensive one.</span> Sometimes that means telling you to save your money and go with a simpler approach. I'd rather you spend your budget on marketing a good site than building an overcomplicated one nobody sees.</p>
+        
+        <p class="mb-4">Not sure which tier makes sense for you? That's literally what discovery calls are for.</p>
+    `
+},
+
+{
+    imageUrl: "/images/dev2.png",
+    category: "Performance",
+    title: "Why Your Website Loads Slowly (And What Actually Fixes It)",
+    excerpt: "Spoiler: it's probably not what you think. Real performance issues I've solved, and the one thing that makes the biggest difference.",
+    author: "Kim Hanlon",
+    date: "Jan 16, 2025",
+    slug: generateSlug("Why Your Website Loads Slowly (And What Actually Fixes It)"),
+    content: `
+        <p class="mb-4">Client: "Our website is really slow. Can you optimize the images?"</p>
+        
+        <p class="mb-4">Me: *checks site* "Your images are fine. You've got 47 plugins, 12 different tracking scripts, and you're loading the entire jQuery library to power a single accordion menu."</p>
+        
+        <p class="mb-4">Yeah, everyone thinks it's the images. Sometimes it is. Usually it's not.</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">The Actual Culprits (In Order of What I See Most)</h4>
+        
+        <h5 class="text-lg font-bold text-white mt-4 mb-2">1. Too Much JavaScript Doing Too Little</h5>
+        <p class="mb-4">The number of sites I've seen loading massive frameworks just to add some fade-in animations or a hamburger menu is ridiculous. You don't need 250KB of JavaScript to toggle a class name.</p>
+        
+        <p class="mb-4"><strong>The fix:</strong> Use vanilla JavaScript for simple stuff. You don't need jQuery in 2025. You definitely don't need to load three different animation libraries.</p>
+        
+        <h5 class="text-lg font-bold text-white mt-4 mb-2">2. Plugins/Extensions You Don't Even Use</h5>
+        <p class="mb-4">WordPress sites are the worst for this. Someone installed a plugin three years ago for a feature they used once, never removed it, and now it's loading scripts and styles on every single page.</p>
+        
+        <p class="mb-4"><strong>The fix:</strong> Audit your plugins. If you're not actively using it, delete it. If you need the feature occasionally, there's probably a better way.</p>
+        
+        <h5 class="text-lg font-bold text-white mt-4 mb-2">3. Tracking Scripts & Analytics</h5>
+        <p class="mb-4">Google Analytics, Facebook Pixel, hotjar, crazy egg, whatever new marketing tool your agency sold you - they all add up. Each one makes another request, loads more JavaScript, slows things down.</p>
+        
+        <p class="mb-4"><strong>The fix:</strong> Use Google Tag Manager to load everything through one container. Better yet, ask yourself if you actually look at all that data. Most people don't.</p>
+        
+        <h5 class="text-lg font-bold text-white mt-4 mb-2">4. Your Hosting Sucks</h5>
+        <p class="mb-4">€3/month hosting is cheap for a reason. Shared hosting means you're competing for resources with hundreds of other sites. When someone else's site gets traffic, yours slows down.</p>
+        
+        <p class="mb-4"><strong>The fix:</strong> Move to better hosting. Doesn't have to be expensive - even €15/month can make a huge difference. Or use a CDN to offload static files.</p>
+        
+        <h5 class="text-lg font-bold text-white mt-4 mb-2">5. Images (Yes, Finally)</h5>
+        <p class="mb-4">Okay fine, sometimes it IS the images. Specifically: uploading a 5MB photo straight from your camera phone and letting WordPress resize it.</p>
+        
+        <p class="mb-4"><strong>The fix:</strong> Use proper image formats (WebP where possible), compress them, serve responsive sizes. But honestly, if you fix 1-4 first, your image "problem" usually becomes negligible.</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">The One Thing That Makes The Biggest Difference</h4>
+        <p class="mb-4">Caching. Full stop.</p>
+        
+        <p class="mb-4">Proper caching means your server doesn't have to rebuild the entire page for every single visitor. It serves a saved version, dramatically reducing load times.</p>
+        
+        <p class="mb-4"><span class="text-yellow-400 font-semibold">I've seen sites go from 8-second load times to under 2 seconds just by implementing proper caching.</span> No code changes, no image optimization, just proper caching configuration.</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">How To Actually Check</h4>
+        <p class="mb-4">Use Google PageSpeed Insights or GTmetrix. They'll tell you exactly what's slowing you down. Don't guess.</p>
+        
+        <p class="mb-4">And if the report says "eliminate render-blocking resources" or "reduce unused JavaScript" and you have no idea what that means? That's when you call someone who does.</p>
+    `
+},
+
+{
+    imageUrl: "/images/blog1.png",
+    category: "Case Studies",
+    title: "Three Wexford Businesses That Actually Needed Custom Websites",
+    excerpt: "Real local examples of when custom development made sense - and when it didn't. No bullshit, just honest breakdowns.",
+    author: "Kim Hanlon",
+    date: "Jan 14, 2025",
+    slug: generateSlug("Three Wexford Businesses That Actually Needed Custom Websites"),
+    content: `
+        <p class="mb-4">Everyone thinks they need a custom website until they see the quote. Then suddenly "maybe Wix is fine actually."</p>
+        
+        <p class="mb-4">But sometimes custom really is the right call. Here are three Wexford businesses where it made sense - and what made them different from businesses that didn't need it.</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Case 1: Traditional Irish Music Shop</h4>
+        <p class="mb-4"><strong>The Business:</strong> Family-run shop selling traditional Irish music CDs, vinyl, and rare recordings - lots of obscure stuff you can't find on Spotify or anywhere else.</p>
+        
+        <p class="mb-4"><strong>Why Custom:</strong> Standard e-commerce platforms expect consistent inventory. But this shop's stock is constantly changing - one-off pressings, limited editions, random finds from obscure labels. They'd get a handful of a specific recording, sell out, then maybe find more six months later from a completely different source.</p>
+        
+        <p class="mb-4"><strong>What We Built:</strong> Custom inventory system that handles inconsistent stock, unique cataloging for rare recordings (by artist, region, label, era), integration with their existing backend for tracking what's actually available vs. what's just in the catalog, specialized search that understands traditional music taxonomy.</p>
+        
+        <p class="mb-4"><strong>The Alternative:</strong> Shopify or WooCommerce would've required constant manual updates and workarounds. The platform wasn't designed for "we have this occasionally and we don't know when we'll have it again."</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Case 2: Local Photographer</h4>
+        <p class="mb-4"><strong>The Business:</strong> Wedding and portrait photography, needed online galleries for client proofing and print sales.</p>
+        
+        <p class="mb-4"><strong>Why NOT Custom:</strong> She thought she needed custom. She didn't.</p>
+        
+        <p class="mb-4"><strong>What We Actually Did:</strong> Set her up with Pixieset for client galleries (€12/month) and built a custom portfolio site to showcase her work and book clients.</p>
+        
+        <p class="mb-4"><strong>The Lesson:</strong> Just because you CAN build custom doesn't mean you should. There are tools built specifically for photographers that do client galleries better than anything I could build from scratch. Save the custom development budget for what actually needs it.</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Case 3: Local Tradesperson Booking Platform</h4>
+        <p class="mb-4"><strong>The Business:</strong> Platform connecting homeowners with vetted tradespeople in Wexford. Think "Uber for plumbers" but local and actually useful.</p>
+        
+        <p class="mb-4"><strong>Why Custom:</strong> This isn't a website, it's a web application. Two-sided marketplace, user accounts for both customers and tradespeople, booking system, payment processing, reviews, verification workflows.</p>
+        
+        <p class="mb-4"><strong>What We Built:</strong> Full custom React + Django application. Customer portal, tradesperson dashboard, admin backend for managing everything, automated booking and payment flows, review system, verification process for tradespeople.</p>
+        
+        <p class="mb-4"><strong>Why It Worked:</strong> The website IS the product. There's no template for "local trades marketplace." You either build it custom or you don't build it at all.</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">The Pattern</h4>
+        <p class="mb-4">The businesses that needed custom had one thing in common: <span class="text-yellow-400 font-semibold">their business model didn't fit existing platforms.</span></p>
+        
+        <p class="mb-4">It wasn't about budget. It wasn't about wanting something "fancy." It was about genuinely needing functionality that doesn't exist off-the-shelf.</p>
+        
+        <p class="mb-4">If you're selling standard products, offering standard services, or doing things the same way everyone else in your industry does them? You probably don't need custom. And that's fine.</p>
+        
+        <p class="mb-4">But if your competitive advantage depends on doing things differently, or if you've tried platforms and they all fall short because your business just works differently? Then we should talk.</p>
+    `
+}
 ];
