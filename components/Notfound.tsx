@@ -18,7 +18,7 @@ const NotFound: React.FC = () => {
             return;
         }
 
-        // Ensure glitch layers start hidden
+        // Ensure glitch layers start hidden bla bla bla
         gsap.set([text1Ref.current, text2Ref.current], { opacity: 0 });
 
         const tl = gsap.timeline({ delay: 0.2 });
