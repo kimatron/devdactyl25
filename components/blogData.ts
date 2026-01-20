@@ -11,7 +11,7 @@ const generateSlug = (title: string): string => {
 
 export const blogPostsData: BlogPost[] = [
 {
-        imageUrl: "images/desk3.png",
+        imageUrl: "/images/desk3.png",
         category: "Personal Journey",
         title: "Problem Solving: Above the Waves, Below the Surface & In the Cloud",
         excerpt: "From teaching scuba diving in the Cayman Islands to building cloud solutions. Turns out, meticulous planning and staying calm when shit goes wrong works pretty much everywhere.",
@@ -31,7 +31,7 @@ export const blogPostsData: BlogPost[] = [
         `
     },
     {
-        imageUrl: "images/blog2.png",
+        imageUrl: "/images/blog2.png",
         category: "Hospitality",
         title: "Beyond the 'Gram: Why Your Restaurant Needs Its Own Website",
         excerpt: "Stop paying hefty commissions to delivery apps and fighting the algorithm. A custom website is your digital storefront, giving you control over your menu, brand, and profits.",
@@ -51,7 +51,7 @@ export const blogPostsData: BlogPost[] = [
         `
     },
 {
-    imageUrl: "images/blog3.png",
+    imageUrl: "/images/blog3.png",
     category: "Personal Branding",
     title: "Your Instagram Has 10K Followers. Your Website Has Zero Bookings. Here's Why.",
     excerpt: "Built a following but can't actually book clients or sell anything? Linktree isn't a business model. Here's what you're missing.",
@@ -87,7 +87,7 @@ export const blogPostsData: BlogPost[] = [
 },
 
 {
-    imageUrl: "images/blog4.png",
+    imageUrl: "/images/blog4.png",
     category: "Music Industry",
     title: "Why Musicians Keep Getting Screwed by Platforms (And What to Do About It)",
     excerpt: "Spotify pays pennies, Bandcamp takes a cut, Instagram owns your audience. Stop building someone else's empire and start building yours.",
@@ -120,7 +120,7 @@ export const blogPostsData: BlogPost[] = [
     `
 },
     {
-        imageUrl: "images/blog5.png",
+        imageUrl: "/images/blog5.png",
         category: "E-commerce",
         title: "Sell Your Craft, Not Your Soul: The Case for Your Own Online Store",
         excerpt: "Etsy is a great starting point, but rising fees and fierce competition can hurt your bottom line. Take control of your artisan business with a beautiful, custom e-commerce site.",
@@ -139,7 +139,7 @@ export const blogPostsData: BlogPost[] = [
         `
     },
     {
-        imageUrl: "images/blog9.png",
+        imageUrl: "/images/blog9.png",
         category: "Branding & Portfolio",
         title: "Your Portfolio, Your Power: Why Instagram Isn't Enough for Photographers",
         excerpt: "Social media is for marketing, but a professional website is for closing deals. Showcase your high-resolution work without compression, algorithms, or distractions.",
@@ -158,7 +158,7 @@ export const blogPostsData: BlogPost[] = [
         `
     },
      {
-        imageUrl: "images/blog8.png",
+        imageUrl: "/images/blog8.png",
         category: "Lead Generation",
         title: "Build Trust, Not Just Houses: A Tradesperson’s Guide to a Killer Website",
         excerpt: "In the trades, reputation is everything. A professional website acts as your digital showroom, showcasing your best work and making it easy for new clients to find you.",
@@ -177,7 +177,7 @@ export const blogPostsData: BlogPost[] = [
         `
     },
 {
-    imageUrl: "images/dev1.png",
+    imageUrl: "/images/dev1.png",
     category: "Client Work",
     title: "The Client Asked for 'Something Like Shopify But Custom' - Here's What That Actually Means",
     excerpt: "Breaking down what clients really need vs. what they think they need, and why sometimes the answer is just 'use Shopify.'",

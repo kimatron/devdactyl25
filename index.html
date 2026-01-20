@@ -12,9 +12,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     
     <!-- SEO Meta Tags -->
-    <title>Devdactyl | Web & Software Development | Wexford, Ireland</title>
-    <meta name="description" content="Devdactyl is a creative studio in Wexford, Ireland, led by Kim Hanlon. We specialize in custom web design, software development, and GSAP animations for clients from Ireland to the Cayman Islands." />
-    <meta name="keywords" content="web development wexford, software developer ireland, wexford web designer, react developer wexford, custom web applications ireland, e-commerce development wexford, GSAP animations, nextjs developer ireland, django developer, full-stack developer wexford" />
+    <title>Devdactyl | Web Development Wexford | React, Django, Azure</title>
+    <meta name="description" content="Custom web development in Wexford, Ireland. Specializing in React, Django, and Azure cloud solutions. E-commerce, web apps, and cloud services built right." />
+    <meta name="keywords" content="web development wexford, web design wexford, software developer wexford, react developer ireland, django developer, azure cloud services, e-commerce development wexford, wexford web designer, full-stack developer wexford, custom web applications ireland" />
     <meta name="author" content="Kim Hanlon" />
     <meta name="copyright" content="Devdactyl 2025" />
     <link rel="canonical" href="https://devdactyl.ie/" />
@@ -28,8 +28,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://devdactyl.ie/" />
-    <meta property="og:title" content="Devdactyl | Web & Software Development | Wexford, Ireland" />
-    <meta property="og:description" content="Devdactyl is a creative studio in Wexford, Ireland, led by Kim Hanlon. We specialize in custom web design, software development, and GSAP animations for clients from Ireland to the Cayman Islands." />
+    <meta property="og:title" content="Devdactyl | Web Development Wexford | React, Django, Azure" />
+    <meta property="og:description" content="Custom web development in Wexford, Ireland. React, Django, Azure. E-commerce, web apps, and cloud services." />
     <meta property="og:image" content="https://devdactyl.ie/images/desk.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -37,8 +37,8 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://devdactyl.ie/" />
-    <meta property="twitter:title" content="Devdactyl | Web & Software Development | Wexford, Ireland" />
-    <meta property="twitter:description" content="Devdactyl is a creative studio in Wexford, Ireland, led by Kim Hanlon. We specialize in custom web design, software development, and GSAP animations for clients from Ireland to the Cayman Islands." />
+    <meta property="twitter:title" content="Devdactyl | Web Development Wexford" />
+    <meta property="twitter:description" content="Custom web development in Wexford. React, Django, Azure." />
     <meta property="twitter:image" content="https://devdactyl.ie/images/desk.png" />
 
     <!-- Structured Data (Schema.org) -->
@@ -66,11 +66,14 @@
       "founder": {
         "@type": "Person",
         "name": "Kim Hanlon",
-        "jobTitle": "Web Developer & Software Engineer"
+        "jobTitle": "Software Engineer & Web Developer",
+        "sameAs": [
+          "https://www.linkedin.com/in/kim-hanlon"
+        ]
       },
-      "description": "Custom web design, software development, and GSAP animations. From Wexford, Ireland to the Cayman Islands.",
-      "areaServed": ["Ireland", "Cayman Islands", "United Kingdom", "Europe"],
-      "serviceType": ["Web Development", "Software Development", "E-commerce Development", "Custom Web Applications", "GSAP Animation Development"]
+      "description": "Custom web development, software engineering, and cloud solutions. Specializing in React, Django, and Azure for businesses in Wexford and beyond.",
+      "areaServed": ["Ireland", "United Kingdom", "Europe"],
+      "serviceType": ["Web Development", "Software Development", "E-commerce Development", "Custom Web Applications", "Cloud Services", "React Development", "Django Development", "Azure Cloud Solutions"]
     }
     </script>
 
@@ -129,11 +132,10 @@
         transform-style: preserve-3d;
         position: relative;
       }
-      /* Removed hover effects to prevent conflict with carousel */
       .card-3d .glow-border {
         position: absolute;
         inset: 0;
-        border-radius: 0.5rem; /* same as rounded-lg */
+        border-radius: 0.5rem;
         border: 1px solid transparent;
         background: conic-gradient(from 180deg at 50% 50%, rgba(250, 204, 21, 0.6) 0deg, rgba(250, 204, 21, 0) 360deg) border-box;
         -webkit-mask:
@@ -149,11 +151,9 @@
         pointer-events: none;
       }
       .card-3d:hover .glow-border {
-        /* Let JS control this based on active state */
         opacity: 1;
       }
       
-      /* New Carousel Styles */
       .carousel-wrapper {
         position: relative;
         width: 100%;
@@ -177,7 +177,6 @@
         width: clamp(280px, 40vw, 450px);
         height: fit-content;
         backface-visibility: hidden;
-        /* GSAP will handle transforms */
       }
       .carousel-item .glow-border {
         opacity: 0;
@@ -212,7 +211,6 @@
         transform: scale(1.1);
       }
       
-      /* Ken Burns Effect for Blog Hero */
       .ken-burns-container {
         position: relative;
         overflow: hidden;
@@ -238,7 +236,6 @@
         }
       }
 
-      /* FAQ Accordion Styles */
       .faq-answer {
         max-height: 0;
         overflow: hidden;
@@ -246,7 +243,7 @@
       }
 
       .faq-answer.is-open {
-        max-height: 1000px; /* Adjust if answers are longer */
+        max-height: 1000px;
         transition: max-height 0.5s ease-in;
       }
 
@@ -260,10 +257,9 @@
 
       .faq-icon svg {
         stroke: currentColor;
-        color: #facc15; /* yellow-400 */
+        color: #facc15;
       }
 
-      /* Services Panel Separator */
       .panel::after {
         content: '';
         position: absolute;
@@ -277,14 +273,12 @@
         display: none;
       }
 
-      /* Glass effect for case study nav */
       .glass {
         background: rgba(255, 255, 255, 0.03);
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.1);
       }
 
-      /* Smooth scroll behavior */
       html {
         scroll-behavior: smooth;
       }

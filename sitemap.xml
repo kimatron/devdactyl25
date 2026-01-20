@@ -2,32 +2,88 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://devdactyl.ie/</loc>
-    <lastmod>2025-10-28</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://devdactyl.ie/#services</loc>
-    <lastmod>2025-10-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://devdactyl.ie/#about</loc>
-    <lastmod>2025-10-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://devdactyl.ie/#blog</loc>
-    <lastmod>2025-10-28</lastmod>
+    <loc>https://devdactyl.ie/blog</loc>
+    <lastmod>2025-01-20</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://devdactyl.ie/blog/problem-solving-above-the-waves-below-the-surface-in-the-cloud</loc>
+    <lastmod>2023-11-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://devdactyl.ie/#contact</loc>
-    <lastmod>2025-10-28</lastmod>
+    <loc>https://devdactyl.ie/blog/beyond-the-gram-why-your-restaurant-needs-its-own-website</loc>
+    <lastmod>2023-11-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://devdactyl.ie/blog/your-instagram-has-10k-followers-your-website-has-zero-bookings-heres-why</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://devdactyl.ie/blog/why-musicians-keep-getting-screwed-by-platforms-and-what-to-do-about-it</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://devdactyl.ie/blog/sell-your-craft-not-your-soul-the-case-for-your-own-online-store</loc>
+    <lastmod>2023-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://devdactyl.ie/blog/your-portfolio-your-power-why-instagram-isnt-enough-for-photographers</loc>
+    <lastmod>2023-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://devdactyl.ie/blog/build-trust-not-just-houses-a-tradespersons-guide-to-a-killer-website</loc>
+    <lastmod>2023-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://devdactyl.ie/blog/the-art-of-the-drop-translating-djing-skills-into-web-animation-timing</loc>
+    <lastmod>2023-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://devdactyl.ie/blog/decompression-stops-user-flows-lessons-from-technical-diving</loc>
+    <lastmod>2023-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://devdactyl.ie/blog/boosting-your-business-in-wexford-the-power-of-local-web-development</loc>
+    <lastmod>2023-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://devdactyl.ie/blog/the-essential-guide-to-web-design-for-small-businesses-in-wexford</loc>
+    <lastmod>2023-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://devdactyl.ie/blog/the-client-asked-for-something-like-shopify-but-custom-heres-what-that-actually-means</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
