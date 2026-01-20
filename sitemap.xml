@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://devdactyl.ie/</loc>
-    <lastmod>2025-01-20</lastmod>
+    <lastmod>2026-01-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://devdactyl.ie/blog</loc>
-    <lastmod>2025-01-20</lastmod>
+    <lastmod>2026-01-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -28,13 +28,13 @@
   </url>
   <url>
     <loc>https://devdactyl.ie/blog/your-instagram-has-10k-followers-your-website-has-zero-bookings-heres-why</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://devdactyl.ie/blog/why-musicians-keep-getting-screwed-by-platforms-and-what-to-do-about-it</loc>
-    <lastmod>2025-01-12</lastmod>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -57,10 +57,10 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://devdactyl.ie/blog/the-art-of-the-drop-translating-djing-skills-into-web-animation-timing</loc>
-    <lastmod>2023-10-18</lastmod>
+    <loc>https://devdactyl.ie/blog/the-client-asked-for-something-like-shopify-but-custom-heres-what-that-actually-means</loc>
+    <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://devdactyl.ie/blog/decompression-stops-user-flows-lessons-from-technical-diving</loc>
@@ -81,8 +81,20 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://devdactyl.ie/blog/the-client-asked-for-something-like-shopify-but-custom-heres-what-that-actually-means</loc>
-    <lastmod>2025-01-10</lastmod>
+    <loc>https://devdactyl.ie/blog/what-youre-actually-paying-for-budget-vs-premium-websites</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://devdactyl.ie/blog/why-your-website-loads-slowly-and-what-actually-fixes-it</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://devdactyl.ie/blog/three-wexford-businesses-that-actually-needed-custom-websites</loc>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
