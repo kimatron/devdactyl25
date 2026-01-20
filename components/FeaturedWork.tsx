@@ -85,7 +85,7 @@ export const projectsData: Project[] = [
     },
     {
         title: 'Bang For Your Buck',
-        slug: '/bang-for-your-buck',
+        slug: 'bang-for-your-buck',
         description: 'A side project that became a local hit - a crowdsourced platform tracking pint prices across Ireland. Built with real-time updates, geolocation verification, and community moderation to maintain data accuracy. Currently tracking prices at 200+ venues with active daily submissions from the community.',
         imageUrl: 'images/bangbuck.png',
         tags: ['Real-time', 'Community', 'Mobile-first'],

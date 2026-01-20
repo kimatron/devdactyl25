@@ -36,6 +36,11 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
         return () => ctx.revert();
     }, [project]);
 
+    // Fix the image path if it doesn't start with /
+    const imageUrl = project.imageUrl.startsWith('/') 
+        ? project.imageUrl 
+        : `/${project.imageUrl}`;
+
     return (
         <div ref={containerRef} className="min-h-screen pb-40 selection:bg-yellow-400 selection:text-black">
             {/* Top Nav */}
@@ -65,14 +70,14 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ project, onBack }) => {
                         ))}
                     </div>
                 </div>
-                <div className="cs-image relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl aspect-video max-w-5xl mx-auto">
-                    <img 
-                        src={project.imageUrl} 
-                        alt={project.title} 
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                </div>
+                <div className="cs-image relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl max-w-5xl mx-auto">
+    <img 
+        src={imageUrl} 
+        alt={project.title} 
+        className="w-full h-auto"
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+</div>
             </header>
 
             {/* Overview */}

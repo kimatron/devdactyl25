@@ -17,6 +17,8 @@ import BackToTopButton from './components/BackToTopButton';
 import CaseStudy from './components/CaseStudy';
 import SmoothPageLoader from './components/Smoothpageloader.tsx';
 import ScrollProgress from './components/ScrollProgress.tsx';
+import NotFound from './components/NotFound.tsx';
+
 import { projectsData } from './components/FeaturedWork';
 import type { Project } from './types';
 
@@ -88,6 +90,7 @@ const App: React.FC = () => {
             <Route path="/blog" element={<><Header /><BlogPage /><Footer /><BackToTopButton /></>} />
             <Route path="/blog/:slug" element={<><Header /><BlogPostPage /><Footer /><BackToTopButton /></>} />
             <Route path="/case-study/:slug" element={<CaseStudyPage />} />
+            <Route path="*" element={<><Header /><NotFound /><Footer /></>} />
           </Routes>
         </div>
       </SmoothPageLoader>
