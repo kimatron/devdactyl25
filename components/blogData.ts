@@ -50,45 +50,75 @@ export const blogPostsData: BlogPost[] = [
             </ul>
         `
     },
-    {
-        imageUrl: "images/blog3.png",
-        category: "Personal Branding",
-        title: "From Fit-fluencer to Fitness Pro: Level Up with a Pro Website",
-        excerpt: "Your Instagram is great for motivation, but a professional website is where you build a real business. Sell plans, manage bookings, and build a brand that's all you.",
-        author: "Kim Hanlon",
-        date: "Nov 09, 2023",
-        slug: generateSlug("From Fit-fluencer to Fitness Pro: Level Up with a Pro Website"),
-        content: `
-            <p class="mb-4">You've built a strong following on social media with your fitness expertise. But when it comes to converting that following into a sustainable business, an Instagram bio link just doesn't cut it. It's time to build a professional headquarters for your brand.</p>
-            <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Your 24/7 Digital Gym</h4>
-            <p class="mb-4">A professional website transforms your personal brand into a scalable business, giving you the tools to monetize your knowledge and build deeper client relationships.</p>
-            <ul class="list-disc list-inside mb-4 space-y-2">
-                <li><strong>Sell Digital Products:</strong> Easily sell custom workout plans, nutrition guides, and video courses. <span class="text-yellow-400 font-semibold">Automate delivery and payments</span> to create passive income streams.</li>
-                <li><strong>Integrated Booking System:</strong> Allow clients to view your availability and book one-on-one sessions directly on your site, syncing with your calendar to eliminate back-and-forth emails.</li>
-                <li><strong>Showcase Transformations:</strong> Create compelling case studies with client testimonials and before-and-after photos to provide powerful social proof and attract new clients.</li>
-                <li><strong>Establish Authority:</strong> Use a blog to share your expertise, training philosophies, and nutrition tips. This builds trust and establishes you as a go-to expert in your niche.</li>
-            </ul>
-        `
-    },
-    {
-        imageUrl: "images/blog4.png",
-        category: "Business Growth",
-        title: "Your Music, Your Rules: Why Every Musician Needs a Website",
-        excerpt: "Tired of platforms taking a cut of your merch and ticket sales? It's time to own your brand. A personal website is your digital home base, not just another profile.",
-        author: "Kim Hanlon",
-        date: "Nov 05, 2023",
-        slug: generateSlug("Your Music, Your Rules: Why Every Musician Needs a Website"),
-        content: `
-            <p class="mb-4">Platforms like Spotify and Bandcamp are essential for discovery, but they're rented space. You're bound by their rules, their branding, and—most importantly—their fees. When you sell merch or tickets through a third party, a percentage of your hard-earned money goes straight into their pocket.</p>
-            <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Take Back Control</h4>
-            <p class="mb-4">A dedicated website puts you in the driver's seat. It's your digital venue, record store, and fan club, all in one. Here’s why that matters:</p>
-            <ul class="list-disc list-inside mb-4 space-y-2">
-                <li><strong>Direct-to-Fan Sales:</strong> Sell your music, merch, and tickets directly to your audience and <span class="text-yellow-400 font-semibold">keep 100% of the profit</span>. No more commission fees.</li>
-                <li><strong>Own Your Audience:</strong> Build an email list that you control. You can't be de-platformed from your own mailing list. It's a direct line to your most dedicated fans.</li>
-                <li><strong>Unified Brand:</strong> Create an immersive experience that reflects your artistic vision, without the clutter and branding of another company.</li>
-            </ul>
-        `
-    },
+{
+    imageUrl: "images/blog3.png",
+    category: "Personal Branding",
+    title: "Your Instagram Has 10K Followers. Your Website Has Zero Bookings. Here's Why.",
+    excerpt: "Built a following but can't actually book clients or sell anything? Linktree isn't a business model. Here's what you're missing.",
+    author: "Kim Hanlon",
+    date: "Jan 15, 2025",
+    slug: generateSlug("Your Instagram Has 10K Followers. Your Website Has Zero Bookings. Here's Why."),
+    content: `
+        <p class="mb-4">You've got 10,000 followers. Your posts get hundreds of likes. People slide into your DMs asking about your services. So why the hell aren't you fully booked?</p>
+        
+        <p class="mb-4">Because Instagram is a discovery platform, not a booking platform. And that Linktree in your bio? That's just a glorified list of links. It's not converting followers into paying clients because it's not designed to.</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">The Problem: You're Building on Rented Land</h4>
+        <p class="mb-4">Instagram owns your audience. Tomorrow, they could change the algorithm and suddenly your posts reach 200 people instead of 2,000. They could ban your account. They could just decide fitness content needs to be "advertiser friendly" and throttle your reach. You have zero control.</p>
+        
+        <p class="mb-4">Every hour you spend creating content for Instagram, you're building Meta's empire. Not yours.</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">What You Actually Need</h4>
+        <p class="mb-4">A real website where you can:</p>
+        <ul class="list-disc list-inside mb-4 space-y-2">
+            <li><strong>Actually take bookings:</strong> Integrated calendar, payment processing, automated confirmations. No more "DM me to book" and then playing phone tag for three days.</li>
+            <li><strong>Sell your shit properly:</strong> Training plans, nutrition guides, video courses. Proper checkout, instant delivery, actual revenue.</li>
+            <li><strong>Own your email list:</strong> When Instagram goes down (and it does), you can still reach your people. When they change the algorithm, you still have direct access.</li>
+            <li><strong>Look professional:</strong> Someone considering paying you €500/month wants to see more than a grid of gym selfies. They want testimonials, credentials, case studies, proper service descriptions.</li>
+        </ul>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Use Instagram For What It's Good At</h4>
+        <p class="mb-4">Keep posting. Keep engaging. That's where people discover you. But when someone's interested? Send them to YOUR platform. Where you control the experience, capture their email, and actually close the sale.</p>
+        
+        <p class="mb-4"><span class="text-yellow-400 font-semibold">Instagram gets them interested. Your website gets them booked.</span></p>
+        
+        <p class="mb-4">Stop giving Meta all your leverage. Build something you actually own.</p>
+    `
+},
+
+{
+    imageUrl: "images/blog4.png",
+    category: "Music Industry",
+    title: "Why Musicians Keep Getting Screwed by Platforms (And What to Do About It)",
+    excerpt: "Spotify pays pennies, Bandcamp takes a cut, Instagram owns your audience. Stop building someone else's empire and start building yours.",
+    author: "Kim Hanlon",
+    date: "Jan 12, 2025",
+    slug: generateSlug("Why Musicians Keep Getting Screwed by Platforms (And What to Do About It)"),
+    content: `
+        <p class="mb-4">Let's do some math. You get 100,000 streams on Spotify. Sounds impressive, right? That's about €400. Before your distributor takes their cut. Before you split it with your bandmates. For 100,000 people listening to your work.</p>
+        
+        <p class="mb-4">Meanwhile, Spotify's CEO is worth billions. Bandcamp takes 15% of everything you sell. Instagram won't even let you put a clickable link in your posts. Every platform that "helps" musicians is primarily helping themselves.</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">The Actual Problem</h4>
+        <p class="mb-4">You don't own the relationship with your fans. Spotify owns it. Instagram owns it. Bandcamp owns it. When someone buys your vinyl on Bandcamp, you don't get their email address - Bandcamp does. When someone follows you on Instagram, that's Meta's data, not yours.</p>
+        
+        <p class="mb-4">If any of these platforms change their terms tomorrow, you're fucked. If they decide to take a bigger cut, you either accept it or lose access to your audience.</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">What You Need Instead</h4>
+        <p class="mb-4">Your own website where you:</p>
+        <ul class="list-disc list-inside mb-4 space-y-2">
+            <li><strong>Sell direct to fans:</strong> Merch, vinyl, digital downloads, tickets - keep 100% of the revenue. No middleman taking 15-30% of every sale.</li>
+            <li><strong>Capture emails:</strong> Build an actual mailing list. When you release new music, you can tell people directly. No algorithm deciding if your fans see your post.</li>
+            <li><strong>Control your brand:</strong> Your aesthetic, your story, your music - presented exactly how you want it. Not crammed into some platform's template.</li>
+            <li><strong>Multiple revenue streams:</strong> Patreon-style memberships, exclusive content, early access, livestream tickets. Whatever works for your audience.</li>
+        </ul>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Still Use the Platforms (But Strategically)</h4>
+        <p class="mb-4">Yeah, put your music on Spotify. Post on Instagram. Use them for discovery and for reaching new people. But <span class="text-yellow-400 font-semibold">always be funneling people back to your own space.</span></p>
+        
+        <p class="mb-4">The platforms are useful tools. But if they're your only presence, you're just a sharecropper on someone else's land. Build something you actually own.</p>
+    `
+},
     {
         imageUrl: "images/blog5.png",
         category: "E-commerce",
@@ -146,21 +176,58 @@ export const blogPostsData: BlogPost[] = [
             </ul>
         `
     },
-    {
-        imageUrl: "https://picsum.photos/seed/pulsar-beat/600/400",
-        category: "Web Animation",
-        title: "The Art of the Drop: Translating DJing Skills into Web Animation Timing",
-        excerpt: "Learn how the principles of building and releasing tension in a DJ set can create unforgettable, rhythm-driven web animations with GSAP.",
-        author: "Kim Hanlon",
-        date: "Oct 18, 2023",
-        slug: generateSlug("The Art of the Drop: Translating DJing Skills into Web Animation Timing"),
-        content: `
-            <p class="mb-4">As a former electronic music DJ, I spent years learning how to control the energy of a room. It's all about tension and release, building anticipation to a fever pitch before 'the drop' sends the crowd into a frenzy. It struck me recently how similar this is to crafting compelling web animations.</p>
-            <p class="mb-4">In web design, <span class="text-yellow-400 font-semibold">'the drop' is that moment of payoff</span>—a button that springs to life, a page transition that feels seamless, or a hero title that animates in with authority. Using a tool like GSAP (GreenSock Animation Platform), we can orchestrate these moments with the same precision as a DJ mixing tracks.</p>
-            <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">Timing is Everything</h4>
-            <p>Just like a DJ uses BPMs and phrasing, GSAP uses timelines, delays, and easing functions to control the rhythm of an animation. An ease of 'power4.out' can feel like a smooth, building crescendo, while 'elastic.out' can feel like a bouncy, energetic drop. By sequencing animations on a timeline, we create a narrative flow, guiding the user's eye and making the experience more intuitive and enjoyable.</p>
-        `
-    },
+{
+    imageUrl: "images/dev1.png",
+    category: "Client Work",
+    title: "The Client Asked for 'Something Like Shopify But Custom' - Here's What That Actually Means",
+    excerpt: "Breaking down what clients really need vs. what they think they need, and why sometimes the answer is just 'use Shopify.'",
+    author: "Kim Hanlon",
+    date: "Jan 10, 2025",
+    slug: generateSlug("The Client Asked for 'Something Like Shopify But Custom' - Here's What That Actually Means"),
+    content: `
+        <p class="mb-4">Had a potential client message me last week: "I want an e-commerce site. Something like Shopify, but custom built for my specific needs."</p>
+        
+        <p class="mb-4">This is the tech equivalent of "I want a custom car, like a Toyota Camry but unique to me." Cool. But do you actually need that, or do you just not want to admit you're buying a Camry?</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">What They Usually Mean</h4>
+        <p class="mb-4">When someone says "like Shopify but custom," they typically mean one of three things:</p>
+        
+        <ul class="list-disc list-inside mb-4 space-y-3">
+            <li><strong>"I want to sell products without paying Shopify's monthly fee"</strong><br/>
+            Newsflash: building and maintaining a custom e-commerce platform costs way more than €29/month. Unless you're doing massive volume, Shopify is cheaper.</li>
+            
+            <li><strong>"I want features Shopify doesn't have"</strong><br/>
+            This one's legit. Maybe you need custom product configurators, complex B2B pricing, integration with specific inventory systems. Fair enough.</li>
+            
+            <li><strong>"I just don't like the idea of using the same platform as everyone else"</strong><br/>
+            I get it. But your customers don't give a shit what platform you're on. They care if checkout is smooth and their order arrives on time.</li>
+        </ul>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">When You Actually Need Custom</h4>
+        <p class="mb-4">Sometimes custom is the right call:</p>
+        
+        <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>You have genuinely unusual business logic (subscription boxes with custom personalization, made-to-order manufacturing with complex options)</li>
+            <li>You need to integrate deeply with existing systems that don't play nice with Shopify</li>
+            <li>You're processing enough volume that Shopify's transaction fees become a real cost center</li>
+            <li>You need specific features that don't exist as apps and would cost more to build as a custom app than just building your own platform</li>
+        </ul>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">The Honest Conversation</h4>
+        <p class="mb-4">My job isn't to sell you the most expensive solution. It's to build what you actually need. Sometimes that's a custom React + Django e-commerce platform with Stripe integration and complex inventory management. <span class="text-yellow-400 font-semibold">Sometimes it's literally just setting up Shopify and customizing the theme.</span></p>
+        
+        <p class="mb-4">For my granddad's traditional Irish music shop? Custom build. He needed specific features for categorizing instruments, managing rare inventory, and integrating with his existing backend. Worth it.</p>
+        
+        <p class="mb-4">For someone selling prints of their artwork? I'd tell them to use Shopify or Big Cartel and save the custom build budget for marketing.</p>
+        
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">The Real Question</h4>
+        <p class="mb-4">It's not "platform or custom." It's "what problem are we actually solving?"</p>
+        
+        <p class="mb-4">Tell me about your business model, your specific pain points, your actual constraints. Then we can figure out if you need a custom solution or if I can save you €10,000 and six months by pointing you at an existing tool that does exactly what you need.</p>
+        
+        <p class="mb-4">Good developers don't just build things. We solve problems. Sometimes that means writing code. Sometimes it means telling you not to.</p>
+    `
+},
     {
         imageUrl: "images/dev3.png",
         category: "UX Design",
