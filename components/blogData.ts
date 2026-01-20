@@ -180,52 +180,55 @@ export const blogPostsData: BlogPost[] = [
     imageUrl: "/images/dev1.png",
     category: "Client Work",
     title: "The Client Asked for 'Something Like Shopify But Custom' - Here's What That Actually Means",
-    excerpt: "Breaking down what clients really need vs. what they think they need, and why sometimes the answer is just 'use Shopify.'",
+    excerpt: "Breaking down what clients really need vs. what they think they need. Sometimes it's a full custom build, sometimes it's not - here's how to tell the difference.",
     author: "Kim Hanlon",
     date: "Jan 10, 2025",
     slug: generateSlug("The Client Asked for 'Something Like Shopify But Custom' - Here's What That Actually Means"),
     content: `
         <p class="mb-4">Had a potential client message me last week: "I want an e-commerce site. Something like Shopify, but custom built for my specific needs."</p>
         
-        <p class="mb-4">This is the tech equivalent of "I want a custom car, like a Toyota Camry but unique to me." Cool. But do you actually need that, or do you just not want to admit you're buying a Camry?</p>
+        <p class="mb-4">Great. But before we start talking tech stack and timelines, we need to figure out what "custom" actually means for your business. Because sometimes it's the difference between a €2,000 project and a €20,000 one.</p>
         
-        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">What They Usually Mean</h4>
-        <p class="mb-4">When someone says "like Shopify but custom," they typically mean one of three things:</p>
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">What "Like Shopify But Custom" Usually Means</h4>
+        <p class="mb-4">When someone says this, they typically mean one of three things:</p>
         
         <ul class="list-disc list-inside mb-4 space-y-3">
-            <li><strong>"I want to sell products without paying Shopify's monthly fee"</strong><br/>
-            Newsflash: building and maintaining a custom e-commerce platform costs way more than €29/month. Unless you're doing massive volume, Shopify is cheaper.</li>
+            <li><strong>"I don't want to pay monthly fees"</strong><br/>
+            Fair enough, but hosting, maintenance, and security updates cost money regardless. The question is whether those costs are more or less than a Shopify subscription over time.</li>
             
-            <li><strong>"I want features Shopify doesn't have"</strong><br/>
-            This one's legit. Maybe you need custom product configurators, complex B2B pricing, integration with specific inventory systems. Fair enough.</li>
+            <li><strong>"I need features Shopify doesn't have"</strong><br/>
+            Now we're talking. Custom product configurators, complex B2B pricing structures, integration with specific inventory systems - these are legitimate reasons to build custom.</li>
             
-            <li><strong>"I just don't like the idea of using the same platform as everyone else"</strong><br/>
-            I get it. But your customers don't give a shit what platform you're on. They care if checkout is smooth and their order arrives on time.</li>
+            <li><strong>"I want my store to feel unique"</strong><br/>
+            This one's interesting. You can get pretty far with custom Shopify themes, but if your brand needs something truly distinctive, a custom build gives you complete control.</li>
         </ul>
         
-        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">When You Actually Need Custom</h4>
-        <p class="mb-4">Sometimes custom is the right call:</p>
+        <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">When Custom Actually Makes Sense</h4>
+        <p class="mb-4">Here's when I'd recommend a full custom e-commerce build:</p>
         
         <ul class="list-disc list-inside mb-4 space-y-2">
-            <li>You have genuinely unusual business logic (subscription boxes with custom personalization, made-to-order manufacturing with complex options)</li>
-            <li>You need to integrate deeply with existing systems that don't play nice with Shopify</li>
-            <li>You're processing enough volume that Shopify's transaction fees become a real cost center</li>
-            <li>You need specific features that don't exist as apps and would cost more to build as a custom app than just building your own platform</li>
+            <li>Your business logic is genuinely unusual (think: made-to-order manufacturing with complex product configuration, subscription boxes with heavy personalization)</li>
+            <li>You need deep integration with existing systems that won't play nice with platform APIs</li>
+            <li>You're processing serious volume where transaction fees become a real cost center</li>
+            <li>You need specific features that would cost more to build as platform plugins than building your own solution</li>
+            <li>Your competitive advantage literally depends on a unique shopping experience</li>
         </ul>
         
         <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">The Honest Conversation</h4>
-        <p class="mb-4">My job isn't to sell you the most expensive solution. It's to build what you actually need. Sometimes that's a custom React + Django e-commerce platform with Stripe integration and complex inventory management. <span class="text-yellow-400 font-semibold">Sometimes it's literally just setting up Shopify and customizing the theme.</span></p>
+        <p class="mb-4">My job isn't to sell you the most expensive solution. It's to build what you actually need.</p>
         
-        <p class="mb-4">For my granddad's traditional Irish music shop? Custom build. He needed specific features for categorizing instruments, managing rare inventory, and integrating with his existing backend. Worth it.</p>
+        <p class="mb-4">For my granddad's traditional Irish music shop? Custom build made sense. He needed specific categorization for rare instruments, custom inventory management for one-of-a-kind pieces, and integration with his existing backend systems. <span class="text-yellow-400 font-semibold">The platform solutions couldn't handle his specific workflow without breaking it.</span></p>
         
-        <p class="mb-4">For someone selling prints of their artwork? I'd tell them to use Shopify or Big Cartel and save the custom build budget for marketing.</p>
+        <p class="mb-4">But I've also told clients "look, you're selling standard products with standard checkout - you don't need custom. Here's a Shopify theme that does 90% of what you want, and I can customize the rest for a fraction of the cost."</p>
         
         <h4 class="text-xl font-bold text-yellow-400 mt-6 mb-2">The Real Question</h4>
         <p class="mb-4">It's not "platform or custom." It's "what problem are we actually solving?"</p>
         
-        <p class="mb-4">Tell me about your business model, your specific pain points, your actual constraints. Then we can figure out if you need a custom solution or if I can save you €10,000 and six months by pointing you at an existing tool that does exactly what you need.</p>
+        <p class="mb-4">Tell me about your business model. Your specific pain points. Your actual constraints. What makes your products or sales process different? What are your growth plans?</p>
         
-        <p class="mb-4">Good developers don't just build things. We solve problems. Sometimes that means writing code. Sometimes it means telling you not to.</p>
+        <p class="mb-4">Then we can figure out if you need React + Django with Stripe integration and custom inventory logic, or if we can save you time and money with a platform solution that does exactly what you need.</p>
+        
+        <p class="mb-4">Good developers don't just build things. We solve problems efficiently. Sometimes that means writing thousands of lines of code. Sometimes it means recommending you don't.</p>
     `
 },
     {
