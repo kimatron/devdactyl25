@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const DevdactylLogo: React.FC = () => (
     <div className="text-2xl font-bold tracking-tighter">
@@ -8,9 +9,11 @@ const DevdactylLogo: React.FC = () => (
     </div>
 );
 
-const Header: React.FC<{ setView: (view: string) => void }> = ({ setView }) => {
+const Header: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -40,52 +43,73 @@ const Header: React.FC<{ setView: (view: string) => void }> = ({ setView }) => {
     }, [mobileMenuOpen]);
 
     const navLinks = [
-        { name: 'Services', href: '#services' },
-        { name: 'About', href: '#about' },
-        { name: 'Blog', href: '#blog', isSpecial: true },
-        { name: 'Contact', href: '#contact' }
+        { name: 'Services', section: 'services' },
+        { name: 'About', section: 'about' },
+        { name: 'Blog', route: '/blog' },
+        { name: 'Contact', section: 'contact' }
     ];
 
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: typeof navLinks[0]) => {
         e.preventDefault();
         setMobileMenuOpen(false);
         
-        if (link.isSpecial) {
-            setView('blog');
+        if (link.route) {
+            // Navigate to a different route (like /blog)
+            navigate(link.route);
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-            setView('home');
-            setTimeout(() => {
-                const element = document.querySelector(link.href);
+        } else if (link.section) {
+            // Scroll to a section
+            if (location.pathname !== '/') {
+                // Not on homepage - navigate home first, then scroll
+                navigate('/');
+                setTimeout(() => {
+                    const element = document.getElementById(link.section);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            } else {
+                // Already on homepage - just scroll
+                const element = document.getElementById(link.section);
                 if (element) {
                     element.scrollIntoView({ behavior: 'smooth' });
                 }
-            }, 100);
+            }
         }
     };
 
     const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
-        setView('home');
         setMobileMenuOpen(false);
+        navigate('/');
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
-        setView('home');
         setMobileMenuOpen(false);
-        setTimeout(() => {
-            const element = document.querySelector('#contact');
+        
+        if (location.pathname !== '/') {
+            // Not on homepage - navigate home first
+            navigate('/');
+            setTimeout(() => {
+                const element = document.getElementById('contact');
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        } else {
+            // Already on homepage - just scroll
+            const element = document.getElementById('contact');
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
             }
-        }, 100);
+        }
     };
 
     return (
         <>
-            {/* Mobile Menu - Render first so header stays on top */}
+            {/* Mobile Menu */}
             {mobileMenuOpen && (
                 <div 
                     className="md:hidden fixed inset-0 z-[55] bg-black/95 backdrop-blur-lg"
@@ -96,14 +120,14 @@ const Header: React.FC<{ setView: (view: string) => void }> = ({ setView }) => {
                         right: 0,
                         bottom: 0,
                         height: '100vh',
-                        height: '100dvh', // Dynamic viewport height for mobile
+                        height: '100dvh',
                     }}
                 >
                     <nav className="flex flex-col items-center justify-center h-full space-y-8 px-6">
                         {navLinks.map(link => (
                             <a 
                                 key={link.name} 
-                                href={link.href} 
+                                href={link.route || `#${link.section}`}
                                 onClick={(e) => handleNavClick(e, link)}
                                 className="text-2xl text-gray-300 hover:text-yellow-400 transition-colors duration-300 tracking-wide"
                             >
@@ -123,7 +147,7 @@ const Header: React.FC<{ setView: (view: string) => void }> = ({ setView }) => {
 
             <header className={`fixed top-0 left-0 w-full z-[60] transition-all duration-300 ${scrolled ? 'bg-black/50 backdrop-blur-lg border-b border-[#333333]' : 'bg-transparent'}`}>
                 <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                    <a href="#" onClick={handleLogoClick} className="cursor-pointer relative z-[70]">
+                    <a href="/" onClick={handleLogoClick} className="cursor-pointer relative z-[70]">
                         <DevdactylLogo />
                     </a>
 
@@ -132,7 +156,7 @@ const Header: React.FC<{ setView: (view: string) => void }> = ({ setView }) => {
                         {navLinks.map(link => (
                             <a 
                                 key={link.name} 
-                                href={link.href} 
+                                href={link.route || `#${link.section}`}
                                 onClick={(e) => handleNavClick(e, link)}
                                 className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 tracking-wide"
                             >
@@ -149,7 +173,7 @@ const Header: React.FC<{ setView: (view: string) => void }> = ({ setView }) => {
                         Get In Touch
                     </a>
 
-                    {/* Mobile Hamburger/X - Always on top */}
+                    {/* Mobile Hamburger/X */}
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                         className="md:hidden relative z-[70] text-gray-300 hover:text-yellow-400 transition-colors p-2 -mr-2"
